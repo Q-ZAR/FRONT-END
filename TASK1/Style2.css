@@ -1,0 +1,41 @@
+.Legend{
+  background-color:#e6f2ff;
+  text-align:center;
+  width:400px;
+}
+table {
+  background-color:#ffeee6;
+  border:2px solid #ff99bb;
+  border-collapse:collapse;
+}
+td{
+  text-align:center;
+   border:1px solid #ff99bb;
+}
+img{
+  width:400px;
+  
+}
+
+h1{
+  color:#004d39;
+}
+
+h2{
+	color:#00664d;
+}
+h3{
+	color:#008060;
+}
+h4{
+	color:#009973;
+}
+h5{
+	color:#00b386;
+}
+h6{
+	color:#00cc99;
+}
+ul{
+  list-style:square;
+}

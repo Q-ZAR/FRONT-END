@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="keywords" content="Basics,list,course,Tables">
+  <meta name="description" content="Мини-сайт для третьего задания: создание сайта по шаблону.">
+  <title>Задание 3</title>
+  <link rel="stylesheet" href="Style3.css">
+</head>
+<body>
+  <h1>HTML Basics</h1>
+  <h2>List</h2>
+  <h3>Ordered list</h3>
+  <ol>
+    <li>first item</li>
+    <li>second item</li>
+    <li>third item</li>
+    <li>fourth item</li>
+    <li>fifth item</li>
+    </ol>
+  <h3>Unordered list</h3>
+  <ul>
+    <li>A</li>
+    <li>B</li>
+    <li>C</li>
+    <li>D</li>
+    <li>E</li>
+    </ul>
+  <div><h3>Description list</h3>
+  <dl>
+    <dt>Name</dt>
+    <dd>Batman</dd>
+    <dt>Birthplace</dt>
+    <dd>Gotham</dd>
+    <dt>Doesn't trust</dt>
+    <dd>Harvey Dent</dd>
+    </dl>
+    <h3>Nested list</h3>
+  <ul>
+    <li>Cat</li>
+    <li>Fish
+      <ul>
+    <li>Sea
+        <ul>
+    <li>small</li>
+    <li>big</li>
+        </ul></li>
+    <li>Ocean</li>
+        </ul>
+    </li>
+    <li>Dog</li>
+    </ul>
+  </div>
+    <h3>List with links</h3>
+  <ul>
+    <li><a href="http://remontinfo.by/style/img/news/1269105813_6.jpg">Pic1</a></li>
+    <li><a href="http://www.zastavki.com/pictures/originals/2014/Motocycles___Honda_Bikes_Honda_cbr_1000rr_2012_076448_.jpg">Pic2</a></li>
+    <li><a href="https://cdn.riastatic.com/photos/ria/news_text/7/705/70507/70507.jpg">Pic3</a></li>
+    </ul>
+  <hr>
+  <h2>Paragraphs</h2>
+  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+  <p>Et harum quidem rerum facilis est et expedita<br> distinctio. Nam libero tempore,<br> cum soluta nobis est<br> eligendi optio cumque nihil impedit<br> quo minus id<br> quod maxime placeat<br> facere possimus, omnis voluptas<br> assumenda est,<br> omnis dolor repellendus. </p>
+  <hr>
+  <h2>Tables</h2>
+  <table>
+    <tr>
+    <th>First name</th>
+    <th>Last name</th>
+      </tr>
+    <tr>
+    <td>Max</td>
+    <td>Doe</td>
+      </tr>
+    <tr>
+    <td>John</td>
+    <td>Cena</td>
+      </tr>
+    </table>
+  <hr>
+      <h2>Image</h2>
+      <img src="https://www.firestock.ru/wp-content/uploads/2013/09/cat-in-paper-hole-255x255.jpg" alt="Любопытный_котик">
+  <hr>
+      <h2>Pre tag</h2>
+      <pre>
+P=zeros(100,21);
+T=zeros(3,100);
+  x=0:5.e-2:1;
+  for i=1:100
+    c=0.9*rand+0.1;
+    a=0.9*rand+0.1;
+    s=0.9*rand+0.1; 
+  T(1,i)=c;
+  T(2,i)=a;
+  T(3,i)=s;
+  P(i,:)=c*exp(-((x-a).^2/s));
+end; 
+      </pre>
+</body>
+</html>
