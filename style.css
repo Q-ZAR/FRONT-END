@@ -1,0 +1,52 @@
+body.back{
+	background-image: url(http://oboi-na-stol.com/pub/original_images/oboi-na-stol.com-296097-abstrakciya-treugolniki-fon.jpg);
+}
+iframe{
+	background-color: white;
+}
+th{
+	background-color: white;
+	background-image: url(http://png.clipart.me/graphics/previews/145/abstract-polygonal-background-white-triangles-background-for-your-design-geometrical-lines-vector-eps-10_145599775.jpg);
+}
+
+th a {
+	text-decoration: none;
+	color: black;
+}
+
+.foot, .trmiddle {
+	background-image:url(http://png.clipart.me/graphics/previews/145/abstract-polygonal-background-white-triangles-background-for-your-design-geometrical-lines-vector-eps-10_145599775.jpg);
+}
+
+h1{
+	text-align: center;
+	font-family: "Courier New";
+	font-weight: lighter;
+}
+
+td,caption{
+	font-family: "Courier New";
+	font-weight: lighter;
+}
+
+th,td{
+	border: 1px solid black;
+    padding: 4px;
+}
+
+table{
+	border-collapse: collapse;
+	max-width: 90%;
+	margin: auto;
+}
+
+dt{
+	font-style: italic;
+	text-decoration: underline;
+}
+img{
+	width: 50%;
+}
+.image{
+	text-align: center;
+}
