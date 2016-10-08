@@ -36,7 +36,7 @@ th,td{
 
 table{
 	border-collapse: collapse;
-	max-width: 90%;
+	width: 90%;
 	margin: auto;
 }
 
@@ -44,9 +44,8 @@ dt{
 	font-style: italic;
 	text-decoration: underline;
 }
-img{
-	width: 50%;
-}
+
 .image{
 	text-align: center;
+	width: 50%;
 }
