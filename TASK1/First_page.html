@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>First page</title>
+<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+</head>
+<body>
+<h1>Task 1</h1> 
+<ul>
+  <li><a href="http://www.w3schools.com/colors/colors_picker.asp">Color</a></li>
+  <li><a href="https://validator.w3.org/">W3C</a></li>
+  <li><a href="http://htmlbook.ru/samhtml/tekst/spetssimvoly">Symbol</a></li>
+  <li><a href="https://www.training.ru/">EPAM Training</a></li>
+  <li><a href="http://htmlbook.ru/samcss/sposoby-dobavleniya-stiley-na-stranitsu">Style</a>
+  </li>
+  </ul>  
+<ol start="7">
+  <li>Card</li>
+  <li>Market</li>
+  <li>News</li>
+  <li>Yet
+  <ul>
+    <li>Music</li>
+    <li>Auto</li>
+    <li>Blogs</li>
+  </ul></li>
+  </ol> 
+<dl>
+  <dt>Tag</dt>
+  <dd>Element of Hypertext Markup Language</dd>
+  <dt>The Semantic Web</dt>
+  <dd>This direction of development of the WWW the aim of which is to provide information in a form suitable for machine processing</dd>
+  </dl> 
+<hr>
+<table border="1">
+  <caption>CSS Generated content for pseudo-elements</caption>
+  <tr>
+    <th>IE</th>
+    <th>Firefox</th>
+    <th>Chrome</th>
+    <th>Safari</th>
+    <th>Opera</th>
+    <th>IOS Safari</th>
+    <th>Opera Mini</th>
+    <th>Android Browser</th>
+    <th>Chrome for Android</th>
+  </tr>
+  <tr>
+    <td rowspan="2"></td>
+    <td rowspan="4"></td>
+    <td>27</td>
+    <td rowspan="3"></td>
+    <td rowspan="5"></td>
+    <td rowspan="4"></td>
+    <td rowspan="5"></td>
+    <td></td>
+    <td rowspan="5"></td>
+  </tr>
+  <tr>
+    <td>31</td>
+    <td>2.3</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>33</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>34</td>
+    <td>5.1</td>
+    <td>4.1</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>thirty</td>
+    <td>35</td>
+    <td>6.1</td>
+    <td>6.1</td>
+    <td>4.3</td>
+  </tr>
+  <tr>
+    <td>eleven</td>
+    <td>31</td>
+    <td>36</td>
+    <td>7</td>
+    <td>23</td>
+    <td>7.1</td>
+    <td>7</td>
+    <td>4.4</td>
+    <td>36</td>
+  </tr>
+  <tr>
+    <td colspan="9">Method of displaying text 
+      images before or after the given element's 
+      contents using the; before and; after 
+      pseudo-elements</td>
+  </tr>
+  </table>
+<hr>
+
+<form action="http://httpbin.org/post" method="post" enctype="multipart/form-data">
+<!-- <form action="http://httpbin.org/get" method="get" enctype="multipart/form-data"> -->
+<fieldset>
+	<legend>Personal data</legend>
+<label> Surname
+    <input id="Surname" type="text" name="SurnameText">
+    </label>
+    <br>
+<label> First Name
+    <input id="FirstName" type="text" name="FirstNameText">
+    </label>
+    <br>
+<label> Middle Name
+    <input id="MiddleName" type="text" name="MiddleNameText">
+    </label>
+    <br>    
+<label> You are
+    <input id="YouAre1" type="radio" name="YouAreText" checked> male
+    <input id="YouAre2" type="radio" name="YouAreText"> female
+    </label>
+    <br> 
+<label> Age
+    <input id="Age" type="number" name="AgeText" max="110" min="18" step="1">
+    </label>
+    <br> 
+<label> Country of Residence
+<input list="Country">
+<datalist id="Country"  name="CountryText">
+    <option value="Russia">
+    <option value="Poland">
+    <option value="USA">
+    <option value="France">
+    <option value="German">
+    <option value="Transylvania">
+    </datalist>
+    </label>
+    <br>
+ <label> City
+    <input id="City1" type="checkbox" name="CityText"> Ryazan
+    <input id="City2" type="checkbox" name="CityText"> Moscow
+    </label>
+    <br>   
+<label> Photography
+    <input id="Photography" type="file" name="PhotographyFile"> 
+    </label>
+    <br>
+<hr> 
+<label> Title
+    <select id="Title" type="text" name="TitleText" size="8" multiple> 
+    <optgroup label="Technologies">
+    <option value="Web">Web Master</option>
+    <option value="Database">Database Administrator</option>
+    <option value="Computer">Computer-aided design</option>
+    <optgroup label="Finance">
+    <option value="Economic">Economic Planning</option>
+    <option value="Management">Management accounting</option>
+    <option value="Budgeting">Budgeting and planing</option>
+    </select>
+    </label>
+    <br>
+<label> Salary
+<input type="range" min="0" max="100" step="1" value="50" oninput="sizePic()"> 
+</label>
+    <br>
+<label>
+    <textarea id="SomeText" type="file" name="SomeTextText" rows="10" cols="50" placeholder="Tell us about yourself..."></textarea> 
+    </label>
+    <br>
+	</fieldset>
+
+	<fieldset>
+	<legend>Contact Information</legend>
+<label> Site
+    <input id="Site" type="text" name="SiteText">
+    </label>
+    <br>
+<label> Email
+    <input id="Email" type="email" name="EmailText">
+    </label>
+    <br>
+<label> Phone
+    <input id="Phone" type="text" name="PhoneText">
+    </label>
+    <br> 
+	</fieldset>
+<label> Password
+    <input id="Password" type="Password" name="PasswordText" required>
+    </label>
+    <br> 
+<input type="submit" name="Send" value="Отправить">
+<input type="reset" name="Reset" value="Очистить">
+</form>
+<!--<script type="text/javascript" src="script.js"></script>-->
+</body>
+
+</html>

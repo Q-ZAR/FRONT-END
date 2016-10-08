@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>First page</title>
+<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+</head>
+<body>
+<h1>The Form</h1> 
+<form action="http://httpbin.org/post" method="post" enctype="multipart/form-data">
+<!-- <form action="http://httpbin.org/get" method="get" enctype="multipart/form-data"> -->
+<fieldset>
+	<legend>Personal data</legend>
+<label> Surname
+    <input id="Surname" type="text" name="SurnameText" style="margin-left: 34px;">
+    </label>
+    <br>
+<label> First Name
+    <input id="FirstName" type="text" name="FirstNameText" style="margin-left: 19px;">
+    </label>
+    <br>
+<label> Middle Name
+    <input id="MiddleName" type="text" name="MiddleNameText" style="margin-left: 3px;">
+    </label>
+    <br>    
+<label> You are
+    <input id="YouAre1" type="radio" name="YouAreText" style="margin-left: 44px;" checked> male <br />
+    <input id="YouAre2" type="radio" name="YouAreText" style="margin-left: 97px;"> female
+    </label>
+    <br> 
+<label> Age
+    <input id="Age" type="number" name="AgeText" max="110" min="18" step="1" style="margin-left: 65px; width: 125px;">
+    </label>
+    <br> 
+<label> Country
+<input list="Country" style="margin-left: 40px;">
+<datalist id="Country"  name="CountryText">
+    <option value="Russia">
+    <option value="Poland">
+    <option value="USA">
+    <option value="France">
+    <option value="German">
+    <option value="Transylvania">
+    </datalist>
+    </label>
+    <br>
+ <label> City
+    <input id="City1" type="checkbox" name="CityText" style="margin-left: 64px;"> Ryazan
+    <input id="City2" type="checkbox" name="CityText"> Moscow
+    </label>
+    <br>   
+<label> Photography
+    <input id="Photography" type="file" name="PhotographyFile" style="margin-left: 10px;"> 
+    </label>
+    <br>
+<hr> 
+<label> Title
+    <select id="Title" type="text" name="TitleText" size="8" style="margin-left: 15px;" multiple> 
+    <optgroup label="Technologies">
+    <option value="Web">Web Master</option>
+    <option value="Database">Database Administrator</option>
+    <option value="Computer">Computer-aided design</option>
+    <optgroup label="Finance">
+    <option value="Economic">Economic Planning</option>
+    <option value="Management">Management accounting</option>
+    <option value="Budgeting">Budgeting and planing</option>
+    </select>
+    </label>
+    <br>
+<label> Salary
+<input type="range" min="0" max="100" step="1" value="50" oninput="sizePic()"> 
+</label>
+    <br>
+<label>
+    <textarea id="SomeText" type="file" name="SomeTextText" rows="10" cols="50" placeholder="Tell us about yourself..."></textarea> 
+    </label>
+    <br>
+	</fieldset>
+
+	<fieldset>
+	<legend>Contact Information</legend>
+<label> Site
+    <input id="Site" type="text" name="SiteText" style="margin-left: 25px;">
+    </label>
+    <br>
+<label> Email
+    <input id="Email" type="email" name="EmailText" style="margin-left: 12px;">
+    </label>
+    <br>
+<label> Phone
+    <input id="Phone" type="text" name="PhoneText" style="margin-left: 10px;">
+    </label>
+    <br> 
+	</fieldset>
+<label> Password
+    <input id="Password" type="Password" name="PasswordText" required>
+    </label>
+    <br> 
+<input type="submit" name="Send" value="Отправить">
+<input type="reset" name="Reset" value="Очистить">
+</form>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

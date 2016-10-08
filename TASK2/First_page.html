@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>First page</title>
+<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+</head>
+<body>
+<h1>Registration form</h1> 
+<form action="http://httpbin.org/post" method="post">
+<!-- <form action="http://httpbin.org/get" method="get"> -->
+<fieldset>
+	<legend>Personal data</legend>
+<label> First Name
+    <input id="FirstName" type="text" name="FirstNameText" maxlength="10" autofocus required>
+    </label>
+    <br>
+<label> Surname
+    <input id="Surname" type="text" name="SurnameText" minlength="3">
+    </label>
+    <br>   
+<label> Sex <br>
+    <input id="SexMale" type="radio" name="SexText" checked> Male <br>
+    <input id="SexFemale" type="radio" name="SexText"> Female
+    </label>
+    <br> 
+	</fieldset>
+
+	<fieldset>
+	<legend>Contact Information</legend>
+<label> Site
+    <input id="Site" type="text" name="SiteText">
+    </label>
+    <br>
+<label> Email
+    <input id="Email" type="email" name="EmailText" required>
+    </label>
+    <br>
+<label> Phone
+    <input id="Phone" type="text" name="PhoneText" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required>
+    </label>
+    <br> 
+	</fieldset>
+<input type="submit" name="Send" value="Отправить">
+</form>
+<!--<script type="text/javascript" src="script.js"></script>-->
+</body>
+</html>
