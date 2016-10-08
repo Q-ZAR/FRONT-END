@@ -127,7 +127,7 @@
     <br> 
 <label> Country of Residence
 <input list="Country">
-<datalist id="Country"  name="CountryText">
+<datalist id="Country">
     <option value="Russia">
     <option value="Poland">
     <option value="USA">
@@ -148,7 +148,7 @@
     <br>
 <hr> 
 <label> Title
-    <select id="Title" type="text" name="TitleText" size="8" multiple> 
+    <select id="Title" name="TitleText" size="8" multiple> 
     <optgroup label="Technologies">
     <option value="Web">Web Master</option>
     <option value="Database">Database Administrator</option>
@@ -165,7 +165,7 @@
 </label>
     <br>
 <label>
-    <textarea id="SomeText" type="file" name="SomeTextText" rows="10" cols="50" placeholder="Tell us about yourself..."></textarea> 
+    <textarea id="SomeText" name="SomeTextText" rows="10" cols="50" placeholder="Tell us about yourself..."></textarea> 
     </label>
     <br>
 	</fieldset>
@@ -186,7 +186,7 @@
     <br> 
 	</fieldset>
 <label> Password
-    <input id="Password" type="Password" name="PasswordText" required>
+    <input id="Password" type="password" name="PasswordText" required>
     </label>
     <br> 
 <input type="submit" name="Send" value="Отправить">
@@ -194,5 +194,4 @@
 </form>
 <!--<script type="text/javascript" src="script.js"></script>-->
 </body>
-
 </html>
