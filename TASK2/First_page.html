@@ -1,48 +1,51 @@
 <!DOCTYPE HTML>
 <html lang="en">
-<head>
-<title>First page</title>
-<link rel="stylesheet" href="style.css">
-<meta charset="utf-8">
-</head>
-<body>
-<h1>Registration form</h1> 
-<form action="http://httpbin.org/post" method="post">
-<!-- <form action="http://httpbin.org/get" method="get"> -->
-<fieldset>
-	<legend>Personal data</legend>
-<label> First Name
-    <input id="FirstName" type="text" name="FirstNameText" maxlength="10" autofocus required>
-    </label>
-    <br>
-<label> Surname
-    <input id="Surname" type="text" name="SurnameText" minlength="3">
-    </label>
-    <br>   
-<label>Sex<br>
-    <input id="SexMale" type="radio" name="SexText" checked> Male <br>
-    <input id="SexFemale" type="radio" name="SexText"> Female
-    </label>
-    <br> 
-	</fieldset>
 
-	<fieldset>
-	<legend>Contact Information</legend>
-<label> Site
-    <input id="Site" type="text" name="SiteText">
+<head>
+    <title>First page</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <h1>Registration form</h1>
+    <form action="http://httpbin.org/post" method="post">
+        <!-- <form action="http://httpbin.org/get" method="get"> -->
+        <fieldset>
+            <legend>Personal data</legend>
+            <label> First Name
+    <input id="firstName" type="text" name="firstNameText" maxlength="10" autofocus required />
     </label>
-    <br>
-<label> Email
-    <input id="Email" type="email" name="EmailText" required>
+            <br/>
+            <label> Surname
+    <input id="surname" type="text" name="surnameText" minlength="3" />
     </label>
-    <br>
-<label> Phone
-    <input id="Phone" type="text" name="PhoneText" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required>
+            <br/>
+            <label>Sex<br/>
+    <input id="sexMale" type="radio" name="sexText" checked /> Male <br/>
+    <input id="sexFemale" type="radio" name="sexText"/> Female
     </label>
-    <br> 
-	</fieldset>
-<input type="submit" name="Send" value="Отправить">
-</form>
-<!--<script type="text/javascript" src="script.js"></script>-->
+            <br/>
+        </fieldset>
+
+        <fieldset>
+            <legend>Contact Information</legend>
+            <label> Site
+    <input id="site" type="text" name="siteText"/>
+    </label>
+            <br/>
+            <label> Email
+    <input id="email" type="email" name="emailText" required/>
+    </label>
+            <br/>
+            <label> Phone
+    <input id="phone" type="text" name="phoneText" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required />
+    </label>
+            <br/>
+        </fieldset>
+        <input type="submit" name="Send" value="Отправить" />
+    </form>
+    <!--<script type="text/javascript" src="script.js"></script>-->
 </body>
+
 </html>

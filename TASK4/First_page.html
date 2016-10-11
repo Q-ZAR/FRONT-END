@@ -1,61 +1,63 @@
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head>
-<title>First page</title>
-<link rel="stylesheet" href="style.css">
-<meta charset="utf-8">
+    <title>First page</title>
+    <link rel="stylesheet" href="style.css"/>
+    <meta charset="utf-8"/>
 </head>
+
 <body>
-<h1>The Form</h1> 
-<form action="http://httpbin.org/post" method="post" enctype="multipart/form-data">
-<!-- <form action="http://httpbin.org/get" method="get" enctype="multipart/form-data"> -->
-<fieldset>
-	<legend>Personal data</legend>
-<label> Surname
-    <input id="Surname" type="text" name="SurnameText" style="margin-left: 34px;">
+    <h1>The Form</h1>
+    <form action="http://httpbin.org/post" method="post" enctype="multipart/form-data">
+        <!-- <form action="http://httpbin.org/get" method="get" enctype="multipart/form-data"> -->
+        <fieldset>
+            <legend>Personal data</legend>
+            <label> Surname
+    <input id="surname" type="text" name="surnameText" style="margin-left: 34px;" />
     </label>
-    <br>
-<label> First Name
-    <input id="FirstName" type="text" name="FirstNameText" style="margin-left: 19px;">
+            <br/>
+            <label> First Name
+    <input id="firstName" type="text" name="firstNameText" style="margin-left: 19px;"/>
     </label>
-    <br>
-<label> Middle Name
-    <input id="MiddleName" type="text" name="MiddleNameText" style="margin-left: 3px;">
+            <br/>
+            <label> Middle Name
+    <input id="middleName" type="text" name="middleNameText" style="margin-left: 3px;"/>
     </label>
-    <br>    
-<label> You are
-    <input id="YouAre1" type="radio" name="YouAreText" style="margin-left: 44px;" checked> male <br />
-    <input id="YouAre2" type="radio" name="YouAreText" style="margin-left: 97px;"> female
+            <br/>
+            <label> You are
+    <input id="youAre1" type="radio" name="youAreText" style="margin-left: 44px;" checked/> male <br />
+    <input id="youAre2" type="radio" name="youAreText" style="margin-left: 97px;"/> female
     </label>
-    <br> 
-<label> Age
-    <input id="Age" type="number" name="AgeText" max="110" min="18" step="1" style="margin-left: 65px; width: 125px;">
+            <br/>
+            <label> Age
+    <input id="age" type="number" name="ageText" max="110" min="18" step="1" style="margin-left: 65px; width: 125px;"/>
     </label>
-    <br> 
-<label> Country
-<input list="Country" style="margin-left: 40px;">
-<datalist id="Country">
-    <option value="Russia">
-    <option value="Poland">
-    <option value="USA">
-    <option value="France">
-    <option value="German">
-    <option value="Transylvania">
+            <br/>
+            <label> Country
+<input list="country" style="margin-left: 40px;"/>
+<datalist id="country">
+    <option value="Russia"/>
+    <option value="Poland"/>
+    <option value="USA"/>
+    <option value="France"/>
+    <option value="German"/>
+    <option value="Transylvania"/>
     </datalist>
     </label>
-    <br>
- <label> City
-    <input id="City1" type="checkbox" name="CityText" style="margin-left: 64px;"> Ryazan
-    <input id="City2" type="checkbox" name="CityText"> Moscow
+            <br/>
+            <label> City
+    <input id="city1" type="checkbox" name="cityText" style="margin-left: 64px;"/> Ryazan
+    <input id="city2" type="checkbox" name="cityText"/> Moscow
     </label>
-    <br>   
-<label> Photography
-    <input id="Photography" type="file" name="PhotographyFile" style="margin-left: 10px;"> 
+            <br/>
+            <label> Photography
+    <input id="photography" type="file" name="photographyFile" style="margin-left: 10px;"/> 
     </label>
-    <br>
-<hr> 
-<label> Title
-    <select id="Title" name="TitleText" size="8" style="margin-left: 15px;" multiple> 
+            <br/>
+            <hr/>
+            <label> Title
+    <select id="title" name="titleText" size="8" style="margin-left: 15px;" multiple/> 
     <optgroup label="Technologies">
     <option value="Web">Web Master</option>
     <option value="Database">Database Administrator</option>
@@ -66,39 +68,40 @@
     <option value="Budgeting">Budgeting and planing</option>
     </select>
     </label>
-    <br>
-<label> Salary
-<input type="range" min="0" max="100" step="1" value="50" oninput="sizePic()"> 
+            <br/>
+            <label> Salary
+<input type="range" min="0" max="100" step="1" value="50" oninput="sizePic()"/> 
 </label>
-    <br>
-<label>
-    <textarea id="SomeText" name="SomeTextText" rows="10" cols="50" placeholder="Tell us about yourself..."></textarea> 
+            <br/>
+            <label>
+    <textarea id="someText" name="someTextText" rows="10" cols="50" placeholder="Tell us about yourself..."></textarea> 
     </label>
-    <br>
-	</fieldset>
+            <br/>
+        </fieldset>
 
-	<fieldset>
-	<legend>Contact Information</legend>
-<label> Site
-    <input id="Site" type="text" name="SiteText" style="margin-left: 25px;">
+        <fieldset>
+            <legend>Contact Information</legend>
+            <label> Site
+    <input id="site" type="text" name="siteText" style="margin-left: 25px;"/>
     </label>
-    <br>
-<label> Email
-    <input id="Email" type="email" name="EmailText" style="margin-left: 12px;">
+            <br/>
+            <label> Email
+    <input id="email" type="email" name="emailText" style="margin-left: 12px;"/>
     </label>
-    <br>
-<label> Phone
-    <input id="Phone" type="text" name="PhoneText" style="margin-left: 10px;">
+            <br/>
+            <label> Phone
+    <input id="phone" type="text" name="phoneText" style="margin-left: 10px;"/>
     </label>
-    <br> 
-	</fieldset>
-<label> Password
-    <input id="Password" type="password" name="PasswordText" required>
+            <br/>
+        </fieldset>
+        <label> Password
+    <input id="password" type="password" name="passwordText" required/>
     </label>
-    <br> 
-<input type="submit" name="Send" value="Отправить">
-<input type="reset" name="Reset" value="Очистить">
-</form>
-<script type="text/javascript" src="script.js"></script>
+        <br/>
+        <input type="submit" name="Send" value="Отправить"/>
+        <input type="reset" name="Reset" value="Очистить"/>
+    </form>
+    <script type="text/javascript" src="script.js"></script>
 </body>
+
 </html>
