@@ -1,0 +1,89 @@
+body{
+	background-image: url(http://uconstructor.com/_ld/6/24713695.jpg);
+	background-attachment: fixed;
+}
+@font-face{
+	font-family: 'DeHangster';
+		src:url('fonts/DeHangster-Regular.otf');
+}
+@font-face{
+	font-family: 'Betty';
+		src:url('fonts/Betty.otf');
+}
+@font-face{
+	font-family: 'fibre';
+		src:url('fonts/fibre-font.woff');
+}
+img{
+	width: 150px;
+	float: right;
+}
+h1,h2{
+	color: #732673;
+	font-family: 'DeHangster';
+}
+h2{
+	text-align: center;
+}
+h2:hover{
+	color: #cc0066;
+	text-decoration: line-through;
+}
+p{
+	text-indent: 30px;
+}
+div{
+	padding-left: 40px;
+	padding-right: 40px;
+	text-align: justify;
+}
+#backg{
+	background-color: #f0f0f5;
+	border: 2px dotted grey;
+}
+.item1{
+	text-shadow: 1px 2px 7px #e6b3e6;
+	font-family: 'Betty'
+}
+.item2{
+	font-style: italic;
+	font-family: serif;
+}
+#item3{
+	font-family: sans-serif;
+	font-variant: small-caps;
+	direction: rtl;
+	text-decoration: overline;
+}
+#item4{
+	font-weight: bold;
+	letter-spacing: -2px;
+}
+.item5{
+	line-height: 30px;
+	text-decoration: line-through;
+}
+.item6{
+	word-spacing: 30px;
+	letter-spacing: 3px;
+	border: 3px solid white;
+	margin-right: 70px;
+	margin-left: 70px;
+	border-radius: 20px;
+	font-family: 'fibre';
+	background-image: url(http://user-master.org/media/k2/items/cache/0dc247c07eee71a72cf9409729fb3455_XL.jpg);
+}
+.item7{
+	font-size: 20pt;
+	font-family: sans-serif;
+	text-transform: lowercase;
+	white-space: nowrap;
+}
+.item8{
+	text-align: right;
+}
+.item8>span{
+	vertical-align: super;
+	text-decoration: underline;
+	background-color: #ffe6f2;
+}
