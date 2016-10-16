@@ -1,0 +1,396 @@
+#container{
+	border: 6px solid #91DAC7;
+	position: relative;
+	background-color: #E9E8D7;
+	font-family: sans-serif;
+	outline: 1px solid #549B87;
+}
+#header{
+	background-color: #FEC104;
+	height: 25px;
+	padding-top: 8px;
+	padding-left: 10px;
+	position: relative;
+}
+#header:after{
+	position: absolute;
+	content: '';
+	width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 0;
+  	border-top: 20px solid #FEC104;
+  	top: 30px;
+  	left: 10px;
+}
+#container p{
+	padding: 15px 10px;
+	color: #697B88;
+}
+/* TASK 2 */
+
+.arrow{
+	color: white;
+	position: relative;
+	background-color: #77A7CC;
+	border: 6px solid #B7D9F2;
+	padding: 10px;
+}
+.arrow:before{
+	position: absolute;
+	content: '';
+	width: 0;
+    height: 0;
+    border-left: 24px solid transparent;
+    border-right: 24px solid transparent;
+    border-bottom: 24px solid #B7D9F2;
+    top: -28px;
+    left: calc(50% - 12px);
+
+}
+.arrow:after{
+	position: absolute;
+	content: '';
+	width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #77A7CC;
+    top: -20px;
+    left: calc(50% - 8px);
+}
+
+/* TASK 3 */
+p{
+	margin: 0;
+}
+#folder-title,#folder{
+	color: #6D40C2;
+	font-family: sans-serif;
+	padding: 5px 10px 5px 10px;
+}
+#folder-title{
+	background-color: #9573D5;
+	border: 1px solid #5254A7;
+	border-radius: 4px 4px 0 0;
+	box-shadow: 0 0 2px black;
+	display: inline;
+	white-space: nowrap;
+	position: relative;
+	top: -5px;
+	z-index: 1;
+
+}
+#folder{
+	background-color: #9573D5;
+	border-radius: 0 4px 4px 4px;
+	box-shadow: 0 0 4px ;
+	z-index: 20;
+	padding-bottom: 60px;
+	padding-top: 10px;
+}
+	
+/* TASK 4 */
+#line{
+	height: 8px;
+	background-color: #DDDFDF;
+	border:1px solid #ABABAB;
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    color: black;
+    min-height: 140px;
+    left: calc(100% - 200px);
+}
+input[type=checkbox]{
+    display: none;
+}
+input[type=checkbox]:checked ~ ul {
+    display: block;
+}
+label{
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    color: white;
+    background-color: #2EABF3;
+    padding: 2px 20px;
+    border-radius: 0 0 10px 10px;
+    border: 2px solid #1C9FF0;
+
+    cursor: pointer;
+    text-align: center;
+    
+}
+label:hover{
+	box-shadow: 0 0 20px #2EABF3;
+}
+ul{
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    margin:0;
+    padding:0;
+    display: none;
+}
+
+ul li{
+    padding: 2px 20px;
+    background-color: #2EABF3;
+    color: white;
+    cursor: pointer;
+}
+
+ul li:hover{
+    background-color: #1496F1;
+}
+
+ul li a{
+    color: inherit;
+    text-decoration: none;
+}
+/* TASK 5 */
+.bottom-menu{
+	position: relative;
+	height: 40px;
+	background-color: #0F4485;
+	color: white;
+	overflow: hidden;
+	min-width: 500px;
+}
+.part{
+	display: inline-block;
+	background-color: #2C64A1;
+	padding: 5px;
+	height: 40px;
+	box-sizing: border-box;
+	vertical-align: middle;
+	min-width: 40px;
+
+}
+.part:hover{
+	background-color: #E23E1A;
+}
+.number{
+	background-color: red;
+	border-radius: 5px;
+	padding: 4px;
+	margin-left: 35px;
+	margin-top: 2px;
+}
+#exitText{
+	padding: 4px;
+	margin-left: 35px;
+	margin-top: 2px;
+}
+.left-part{
+	float: left;
+}
+.right-part{
+	float: right;
+}
+
+.message{
+	background: #2c64a1 url('http://icon-icons.com/icons2/490/PNG/128/message_47806.png') no-repeat 5px center;
+	background-size: 30px 30px;
+}
+.news{
+	background: #2c64a1 url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Newspaper_Cover.svg/500px-Newspaper_Cover.svg.png') no-repeat 5px center;
+	background-size: 30px 30px;
+}
+
+.people{
+	background: #2c64a1 url('http://icons.iconseeker.com/png/fullsize/people/user-4.png') no-repeat 5px center;
+	background-size: 30px 30px;
+}
+
+.flag{
+	background: #2c64a1 url('http://www.freeiconspng.com/uploads/flags-icon-png-0.png') no-repeat 5px center;
+	background-size: 30px 30px;
+
+}
+.list{
+	background: #2c64a1 url('https://www.carrlane.com/siteData/webRefs/Images/GeneralInfo_03_1.gif') no-repeat 5px center;
+	background-size: 30px 30px;
+
+}
+.reload{
+	background: #2c64a1 url('https://cdn0.iconfinder.com/data/icons/TWG_Retina_Icons/64/arrow_circle_left.png') no-repeat 5px center;
+	background-size: 30px 30px;
+}
+.app{
+	background: #2c64a1 url('http://store.akamai.steamstatic.com/public/shared/images/responsive/header_menu_hamburger.png') no-repeat 5px center;
+	background-size: 30px 30px;
+}
+.exit{
+	background: #2c64a1 url('http://www.freeiconspng.com/uploads/exit-icon-23.png') no-repeat 5px center;
+	background-size: 30px 30px;
+}
+/* TASK 6 */
+/* 1 */
+.wrapper{
+	max-width: 520px;
+	padding: 5px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.item{
+	float: left;
+	margin: 5px;
+    margin-bottom: 15px;
+}
+.imagepage{
+	width: 150px;
+	height: 150px;
+	background: #935728 url(sleepcat.jpg) no-repeat center;
+    background-size: cover;
+    position: relative;
+    border: 5px solid #585858;
+}
+.imagepage:after {
+    position:absolute;
+    width:150px; height:150px;
+    top:0; left:0;
+    background:rgba(0,0,0,0.6);
+    opacity:0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    content: '...z-z-Z';
+    color: white;
+    text-align: center;
+    line-height: 150px;
+
+}
+.imagepage:hover:after {
+    opacity:1;
+}
+.buttons{
+	overflow: hidden;
+	margin: 5px 0 0 0;
+}
+
+.buttons>button{
+	padding: 5px 10px;
+	width: 70px;
+}
+.buttons>button:hover{
+	background-color:#76BE2D;
+	color: white;
+	border: 0;
+}
+.buttons>button:first-child{
+	float: left;
+}
+.buttons>button:last-child{
+	float: right;
+}
+/* 2 */
+.wrapper1{
+	max-width: 520px;
+	padding: 5px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.item1{
+	display: inline-block;
+	box-sizing: border-box;
+	margin: 3px;
+	margin-bottom: 15px;
+}
+.imagepage1{
+	width: 150px;
+	height: 150px;
+	background: #935728 url(sleepcat.jpg) no-repeat center;
+    background-size: cover;
+    position: relative;
+    border: 5px solid #585858;
+}
+.imagepage1:after {
+    position:absolute;
+    width:150px; height:150px;
+    top:0; left:0;
+    background:rgba(0,0,0,0.6);
+    opacity:0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    content: '...z-z-Z';
+    color: white;
+    text-align: center;
+    line-height: 150px;
+
+}
+.imagepage1:hover:after {
+    opacity:1;
+}
+.buttons1>button{
+	padding: 5px 10px;
+	width: 70px;
+	display: inline-block;
+}
+.buttons1>button:hover{
+	background-color:#76BE2D;
+	color: white;
+	border: 0;
+}
+.buttons1>button:last-child{
+	margin-left: 16px;
+}
+.buttons1{
+	margin: 5px 0 0 0;
+}
+/* 3 */
+.wrapper2{
+	max-width: 520px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.item2{
+	margin-bottom: 15px;
+}
+.imagepage2{
+	width: 150px;
+	height: 150px;
+	background: #935728 url(sleepcat.jpg) no-repeat center;
+    background-size: cover;
+    position: relative;
+    border: 5px solid #585858;
+}
+.imagepage2:after {
+    position:absolute;
+    width:150px; height:150px;
+    top:0; left:0;
+    background:rgba(0,0,0,0.6);
+    opacity:0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    content: '...z-z-Z';
+    color: white;
+    text-align: center;
+    line-height: 150px;
+
+}
+.imagepage2:hover:after {
+    opacity:1;
+}
+.buttons2{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 5px 0 5px;
+}
+.buttons2>button:hover{
+	background-color:#76BE2D;
+	color: white;
+	border: 0;
+}
+.buttons2>button{
+	padding: 5px 10px;
+	width: 70px;
+}
+
+
