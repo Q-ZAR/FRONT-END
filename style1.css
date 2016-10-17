@@ -4,32 +4,27 @@
 table{
 	border: 3px solid white;
 	border-collapse: collapse;
+	background-color: #cce6ff;
 }
 th,td{
 	border: 2px solid white;
 	padding-left:10px;
 	padding-right:10px;
 }
-.lightblue{
+tr:nth-child(2n+1){
 	background-color: #e6f2ff;
 }
-.blue{
+th{
 	background-color: #cce6ff;
-}
-.head{
 	text-align: center;
 	padding-top: 3px;
 	padding-bottom: 3px;
 	font-variant: small-caps;
 }
-.head th{
-	padding-top: 3px;
-	padding-bottom: 3px;
-}
 td{
 	height: 45px;
 }
-.name{
+td:first-child{
 	text-transform: capitalize;
 }
 
