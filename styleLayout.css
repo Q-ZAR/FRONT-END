@@ -196,7 +196,7 @@ summary {
     box-sizing: border-box;
 }
 
-.nav-link:hover {
+.nav-link:hover,.nav-link.hover{
 	background-color: #0D8EFC; 
     color: white;
 }
@@ -249,7 +249,7 @@ summary {
 	background: url('icon/clock.png') no-repeat center;
 	background-size: 12px 12px;
 }
-.nav-link:hover:before{
+.nav-link:hover:before,.nav-link.hover:before{
 	filter: brightness(200%);
 }
 /* Добавление значка часов перед новостями */
@@ -330,17 +330,25 @@ summary {
 }
 .small-menu-item{
 	display: inline-block;
+	box-sizing: content-box;
+	margin: 17px 5px 15px 8px;
+}
+
+.small-menu-item>a{
 	font-size: 12px;
 	box-sizing: border-box;
-	margin: 17px 5px 15px 8px;
 	padding: 3px 5px 3px 5px;
 }
 
-.small-menu-item:hover{
+.small-menu-item>a:hover, .small-menu-item>a.hover{
+	box-sizing: border-box;
 	background: #86A3C3;
 	color: white;
 	border-radius: 10px;
 	display: inline-block;
+}
+.small-menu-item>a{
+	color: grey;
 }
 .search {
   width: 35%;
