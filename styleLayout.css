@@ -1,0 +1,492 @@
+/* Short normalize */
+
+html {
+	font-family: sans-serif; 
+	-ms-text-size-adjust: 100%; 
+    -webkit-text-size-adjust: 100%; 
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+a {
+	background-color: transparent;
+	text-decoration: none;
+}
+
+img {
+	border: 0;
+}
+
+article,
+aside,
+details,
+div,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+	display: block;
+}
+
+/* Base styling */
+
+.header,.main,.footer {
+	width: 100%;
+	color:#78829D;
+}
+
+.header, .footer {
+	overflow: hidden;
+	height: 45px;
+	background-color: #2f364a;	
+}
+
+.main {
+	height: 100%;
+	min-height: 100%;
+	padding: 0 0 90px 0;
+	margin: 0 0 -90px 0;
+	overflow: hidden;
+	overflow-y: auto;
+	box-sizing: border-box;
+}
+
+.footer {
+	background-color: #181e2c;
+	position: relative;
+}
+
+/* Base styling */
+
+.right-part-header {
+	float: right;
+	font-size: 13px;
+}
+
+.head-item{
+	min-width: 35px;
+	height: 45px;
+	display: inline-block;
+}
+
+.head-item a{
+	height: 100%;
+	display: block;
+}
+
+.head-link{
+	color: #6B76AE;
+	position: relative;
+	line-height: 45px;
+	padding: 0 15px;
+}
+
+.head-link.login{
+	background-color: #0D8EFC;
+	color: white;
+	padding: 0 50px;
+}
+
+.login:before{
+	content: "";
+	background: url('icon/login.jpg') no-repeat center;
+	background-size: 30px 30px;
+	position: absolute;
+	left: 10px;
+	top: 7px;
+	border-radius: 15px;
+	border:1px solid white;
+	width: 30px;
+	height: 30px;
+}
+.login:after{
+	content: "";
+	background: url('icon/arrow.png') no-repeat center;
+	background-size: 23px 23px;
+	position: absolute;
+	right: 12px;
+	top: 14px;
+	border-radius: 10px;
+	width: 15px;
+	height: 15px;
+	filter: brightness(200%);
+}
+
+.head-link:hover{
+	background-color: #0D8EFC;
+	color: white;
+}
+
+.left-side {
+	width: 200px;
+    background-color: #131621;
+    float: left;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.partmenu {
+	width: 100%;
+	background-color: #1f2637;
+	margin-bottom: 7px;
+	border-bottom: 1px solid #141724;
+	border-top: 1px solid #282f41;
+	padding: 0;
+}
+
+.partmenu.button {
+	box-sizing: border-box;
+	padding: 35px 0;
+}
+.partmenu.nav:nth-child(3), .partmenu.news{
+	padding: 20px 0 20px 0;
+}
+.btn {
+	width: 160px;
+	height: 44px;
+	font-size: 14px;
+	background-color: #f2795a;
+	color: white;
+	padding: 5px;
+	box-sizing: border-box;
+	border:0;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 34px;
+	margin: 0 auto;
+}
+
+.btn a{
+	height: 100%;
+	width: 100%;
+	display: block;
+	color: white;
+}
+
+
+.nav, .news{
+	font-size: 13px;
+	font-family: sans-serif;
+}
+
+.nav a{
+	color: #78829D;
+}
+
+.news span{
+	font-weight: 700;
+}
+.nav-link{
+	display: block;
+	text-decoration: none;
+    padding: 0px 10px 0 46px;
+    line-height: 37px;
+    height: 37px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav-link:hover {
+	background-color: #0D8EFC; 
+    color: white;
+}
+
+.nav .nav-item{
+    position: relative;
+}
+
+.news .nav-item{
+	color:#7583AC;
+    padding:0px 20px 5px 30px;
+    position: relative;
+}
+/*установка значков перед пунктом меню 
+и высветление при наведении*/
+.partmenu:nth-child(2) .nav-link:before{
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	left: 24px;
+	top: 12px;
+}
+.bookicon:before {
+	content: "";
+	background: url('icon/book.png') no-repeat center;
+	background-size: 12px 12px;
+}
+.globe:before {
+	content: "";
+	background: url('icon/globe.png') no-repeat center;
+	background-size: 12px 12px;
+}
+.shop:before {
+	content: "";
+	background: url('icon/shop.png') no-repeat center;
+	background-size: 12px 12px;
+}
+.star:before {
+	content: "";
+	background: url('icon/star.png') no-repeat center;
+	background-size: 12px 12px;
+}
+.list:before {
+	content: "";
+	background: url('icon/list.png') no-repeat center;
+	background-size: 12px 12px;
+}
+.clock:before {
+	content: "";
+	background: url('icon/clock.png') no-repeat center;
+	background-size: 12px 12px;
+}
+.nav-link:hover:before{
+	filter: brightness(200%);
+}
+/* Добавление значка часов перед новостями */
+.news>.nav-item{
+	padding: 0px 10px 0 46px;
+}
+.news>.nav-item:before{
+	content: "";
+	background: url('icon/clock.png') no-repeat center;
+	background-size: 12px 12px;
+	width: 23px;
+	height: 23px;
+	position: absolute;
+	left: 12px;
+	top: 10px;
+	border-radius: 10px;
+}
+/* Добавление кружочков перед меню в середине (формы) */
+.ball:before {
+	content: "";
+	background: no-repeat center;
+	border-radius: 50%;
+	background-size: 6px 6px;
+	width: 6px;
+	height: 6px;
+	position: absolute;
+	left: 24px;
+	top: 15px;
+}
+.nav-item:nth-child(1) .ball:before{
+	background-color: #e64c66;
+}
+.nav-item:nth-child(2) .ball:before{
+	background-color: #ffab00;
+}
+.nav-item:nth-child(3) .ball:before{
+	background-color: #00bfdd;
+}
+.nav-item:nth-child(4) .ball:before{
+	background-color: #7874cf;
+}
+/* Работа с правой частью main */
+
+.right-side {
+	float: left;
+	margin-left: -200px;
+	width: 100%;
+    display:block;
+	overflow:hidden; 
+	height: 100%;
+}
+
+.cont-wrap {
+	margin-left: 200px;
+	height: 100%;
+}
+
+.small-header, .small-menu {
+	background: #EAEDF7;
+	border-bottom: 1px solid #D2D3DE;	
+	width: 100%;
+	min-width: 600px;
+}
+
+.small-header{
+	height: 70px;
+	box-sizing: border-box;
+	color: #131621;
+	font-size: 22px;
+	line-height: 71px;
+	margin: 0 auto;
+	padding-left: 21px;
+}
+
+.small-menu{
+	height: 50px;
+	padding-left: 15px;
+}
+.small-menu-item{
+	display: inline-block;
+	font-size: 12px;
+	box-sizing: border-box;
+	margin: 17px 5px 15px 8px;
+	padding: 3px 5px 3px 5px;
+}
+
+.small-menu-item:hover{
+	background: #86A3C3;
+	color: white;
+	border-radius: 10px;
+	display: inline-block;
+}
+.search {
+  width: 35%;
+  position: relative;
+  display: inline-block;
+  float: right;
+  top: 10px;
+  right: 30px;
+}
+
+.search input {
+  border: none;
+}
+
+.search .input {
+  width: 100%;
+  padding: 8px 37px 9px 15px;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1), inset 0 1px 2px rgba(0,0,0,0.3);
+  border-radius: 20px;
+  background: white;
+  font: 13px Tahoma, Arial, sans-serif;
+  color: #555;
+  outline: none;
+}
+.search .input:focus {
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2), inset 0 1px 2px rgba(0,0,0,0.4);
+  color: #333;
+}
+.search .submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 37px;
+  height: 100%;
+  cursor: pointer;
+  background: url(https://lh4.googleusercontent.com/-b-5aBxcxarY/UAfFW9lVyjI/AAAAAAAABUg/gQtEXuPuIds/s13/go.png) 50% no-repeat;
+  opacity: 0.5;
+}
+
+.search .submit:hover {
+  opacity: 0.8;
+}
+
+.books {
+	min-height: 400px;
+	height: 100%;
+	overflow-y: scroll;
+}
+.cnt {
+	display: flex;
+	/*height: 1500px;*/
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	overflow-y: scroll;
+	padding: 0 0 140px 0;
+	box-sizing: border-box;
+}
+.book-item{
+	position: relative;
+	width: 200px;
+	height: 350px;
+	box-sizing: border-box;
+	margin:30px 7px 0 7px;
+}
+
+.book-item a img{
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 270px;
+	border-radius: 5px;
+}
+.book-name{
+	margin-top: 15px;
+	height: 20px;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+.book-name a {
+	color: black;
+}
+
+.book-autor{
+	height: 20px;
+	box-sizing: border-box;
+	font-size: 12px;
+}
+.book-stars{
+	margin-top: 5px;
+	height: 15px;
+}
+.book-stars>div{
+	position: relative;
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+}
+.book-stars>.full{
+	background: url(icon/star-full.png) no-repeat 50%;
+	background-size: 15px 15px;
+}
+.book-stars>.half{
+	background: url(icon/star-half.png) no-repeat 50%;
+	background-size: 17px 17px;
+}
+.book-stars>.empty{
+	background: url(icon/star-empty.png) no-repeat 50%;
+	background-size: 15px 15px;
+}
+/* Работа с нижней частью */
+
+.right-part-footer{
+	float: right;
+	height: 45px;
+	min-width: 110px;
+}
+
+.foot-item{
+	display: inline-block;
+	height: 45px;
+	width: 55px;
+}
+
+.foot-item a {
+	display: block;
+	height: 100%;
+}
+
+.foot-link{
+	text-decoration: none;
+	color: #6B76AE;
+	position: relative;
+}
+
+.foot-link:hover{
+	background-color: #0D8EFC;
+}
+.question{
+	background: url(icon/question.png) no-repeat 50%;
+	background-size: 15px 15px;
+}
+.settings{
+	background: #0D8EFC url(icon/settings.png) no-repeat 50%;
+	background-size: 15px 15px;
+}
