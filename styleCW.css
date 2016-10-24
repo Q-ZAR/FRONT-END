@@ -104,6 +104,10 @@ h2, div{
 a{
 	text-decoration: none;
 	color: blue;
+	border-bottom: 1px solid rgba(0, 0, 255, 0);
+	transition-property: border-bottom;
+  	transition-duration: 1.5s;
+  	transition-timing-function: linear;
 }
 a:after{
 	content: "|";
@@ -114,14 +118,13 @@ a:nth-last-child(1):after{
 }
 
 a:hover{
-	border-bottom: 1px solid blue;
+	border-bottom: 1px solid rgba(0, 0, 255, 0.7);
+	
+
 }
 a:hover:after{
-	border-bottom: 1px solid blue;
 	content: " ";
 }
-
-
 
 
 
