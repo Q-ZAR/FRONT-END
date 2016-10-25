@@ -447,8 +447,11 @@ summary {
 	box-sizing: border-box;
 	margin:30px 7px 0 7px;
 }
-
-.book-item a img{
+.book-item a {
+	display: block;
+	color: black;
+}
+.book-item img{
 	display: block;
 	position: relative;
 	width: 100%;
@@ -462,9 +465,9 @@ summary {
 	font-size: 16px;
 }
 
-.book-name a {
+/*.book-name a {
 	color: #444c63;
-}
+}*/
 
 .book-autor{
 	height: 20px;
@@ -482,7 +485,7 @@ summary {
 	height: 15px;
 	display: inline-block;
 }
-.book-stars>.full{
+/*.book-stars>.full{
 	background: url(icon/star-full.png) no-repeat 50%;
 	background-size: 15px 15px;
 }
@@ -494,6 +497,13 @@ summary {
 	background: url(icon/star-empty.png) no-repeat 50%;
 	background-size: 15px 15px;
 }
+*/
+.book-stars>.star{
+	background: url(icon/star-empty.png) no-repeat 50%;
+	background-size: 15px 15px;}
+.book-stars>.star:hover{
+	background: url(icon/star-full.png) no-repeat 50%;
+	background-size: 15px 15px;}
 /* Работа с нижней частью */
 
 .right-part-footer{
