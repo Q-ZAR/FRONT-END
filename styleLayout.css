@@ -437,6 +437,46 @@ summary {
 	padding: 0 0 140px 0;
 	box-sizing: border-box;
 }
+
+/* Дизайн скрола */
+::-webkit-scrollbar-button {
+background-image:url('');
+background-repeat:no-repeat;
+width:0px;
+height:0px
+}
+
+::-webkit-scrollbar-track { /*дорожка*/
+background-color:white;
+}
+
+::-webkit-scrollbar-thumb { /*бегунок*/
+-webkit-border-radius: 4px;
+border-radius: 10px;
+background-color:#BFC9DC;
+}
+
+::-webkit-scrollbar-thumb:hover{
+background-color:#BFC9DC;
+}
+
+::-webkit-scrollbar-button {
+	display: none;
+}
+
+/*::-webkit-resizer{
+background-image:url('');
+background-repeat:no-repeat;
+width:4px;
+height:0px
+}*/
+
+::-webkit-scrollbar{ /* тоже дорожка, но в целом */
+width: 3px;
+}
+
+/* конец дизайна скрола */
+
 .book-item{
 	position: relative;
 	width: 200px;
