@@ -281,28 +281,28 @@ console.log(test34);
 
 // Array
 // task 6 - наиболее частый элемент массива
-/*console.log("----Найти наиболее частый элемент массива----");
+console.log("----Найти наиболее частый элемент массива----");
 function frequentItem(array){
 	if (isArray(array)){
 		var n=0; // считает кол-во повторов
 		var max=0; // самое большое кол-во повторов
 		var item; //повторяющееся число
 		for (var i = 0; i < array.length; i++) {
-			for (var j=0; j < array.length; j++) {
-				if (j==i) {
-					n=n+1;
-				}
-			} if (n > max){
-				max = n;
-				item = j;
+			for (var j = 0; j < array.length; j++) {
+				if (array[j]==array[i]) {n=n+1;}
 			}
+			if (n > max){ max = n; item = array[i];}
+			n = 0;
 		}
-		return array[item];
+		return ("Наиболее частый элемент: "+item);
 	}
 }
 
+
 test35 = frequentItem(["d","s","f","f","a","d","f"]);
-console.log(test35); */
+console.log(test35); 
+test351 = frequentItem([1,3,3,7,10,3,71,4]);
+console.log(test351); 
 
 // Array
 // task 7 - клон массива
