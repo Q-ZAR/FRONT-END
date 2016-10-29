@@ -85,10 +85,16 @@ console.log(name);
 
 // task 7
 // вычисляет факториал с запросом его от пользователя
-function factorial(n) {
-  return (n != 1) ? n * factorial(n - 1) : 1;
+function factorial(numb) {
+		var result = 1;
+		for (var i = numb; i > 1; i--) {
+			result = result*i;
+		}
+		return result;
 }
+
 number=prompt("Факториал какого числа вас интересует?", '');
-console.log( factorial(number));
+test=factorial(number);
+console.log(test);
 
 
