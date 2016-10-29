@@ -281,7 +281,7 @@ console.log(test34);
 
 // Array
 // task 6 - наиболее частый элемент массива
-console.log("----Найти наиболее частый элемент массива----");
+/*console.log("----Найти наиболее частый элемент массива----");
 function frequentItem(array){
 	if (isArray(array)){
 		var n=0; // считает кол-во повторов
@@ -302,7 +302,7 @@ function frequentItem(array){
 }
 
 test35 = frequentItem(["d","s","f","f","a","d","f"]);
-console.log(test35); 
+console.log(test35); */
 
 // Array
 // task 7 - клон массива
@@ -391,11 +391,82 @@ console.log(test42);
 // Array
 // task 11 - сортировка массива элементов
 console.log("----Сортировка массива элементов----");
+var library = [ 
+{ author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254},
+{ author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264},
+{ author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245}
+];
+
+library.sort(function (a,b){
+	if (a.title>b.title){
+		return 1;
+	}
+	if (a.title<b.title){
+		return -1;
+	}
+	return 0;
+});
+
+console.log(library);
+
+// Objects
+// task 1 - длина объекта
+console.log("----Определение длины объекта----");
+var book = { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254, some: "test"};
+var keys = Object.keys(book);
+console.log(keys.length);
+
+// Objects
+// task 2 - список свойств
+console.log("----Вывести список свойств из объекта----");
+var book = { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254, some: "test"};
+for (var key in book) {
+ console.log(book[key]);
+}
 
 
+//Date
+//task 1 - разница между 2 датами в днях
+console.log("----Разница между 2 датами----");
+var now = new Date (); //сейчас
+var past = new Date (1994, 9, 14, 21, 30, 0, 0);
 
+function diffTime(time1,time2){
+	var time = time2.valueOf()-time1.valueOf();
+	time = time/1000/60/60/24;
+	time = time.toFixed(0);
+	return (time+" дней");
+}
 
+test43 = diffTime(past,now);
+console.log(test43);
 
+//Date
+//task 2 - отобразить дату и время в опред. формате
+console.log("----Дата и время настоящая----");
+var now = new Date();
 
+function formatDate(date){
+	var day = date.getDate();
+	var month = +(date.getMonth())+1;
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	return ("сейчас "+day+"."+month+" время "+hours+":"+minutes);
+}
+
+test44 = formatDate(now);
+console.log(test44);
+
+//Date
+//task 3 - получить текущую дату
+console.log("----Получить текущую дату----");
+
+function nowDate (){
+	var now = new Date();
+	return now;
+}
+
+test45 = nowDate();
+console.log(test45);
 
 
