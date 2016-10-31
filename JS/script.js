@@ -23,6 +23,7 @@ console.log(c);
 var cat1 = ["Barsik","Pushok","Maruska"];
 var n = 0;
 var first=cat1[0];
+
 while (n < cat1.length) {
 	cat1[n]=cat1[n+1];
 	n=n+1;
@@ -35,12 +36,11 @@ console.log(cat1);
 var cat2 = ["Basya","Nastya","Richi"];
 var n = 0;
 var first=cat2[0];
+
 do {
 	cat2[n]=cat2[n+1];
 	n=n+1;
-}
-while 
-	(n < cat2.length)
+} while (n < cat2.length)
 
 cat2[cat2.length-1]=first;
 console.log(cat2);
@@ -49,9 +49,11 @@ console.log(cat2);
 // сдвиг кота на одну позицию влево
 var cat3 = ["Snegok","Ryigik","Pyhlya"];
 var first=cat3[0];
+
 for (var n = 0; n < cat3.length; n++) {
 	cat3[n]=cat3[n+1];
 }
+
 cat3[cat3.length-1]=first;
 console.log(cat3);
 
@@ -68,13 +70,19 @@ console.log(h,j);
 // task 5
 // выясняет, переменная отрицательная, положительная или равна 0
 var i=-10;
-if (i==0){
-	console.log("Равно нулю");
-} else if (i>0) {
-	console.log("Больше нуля");
-} else {
-console.log("Меньше нуля");
+
+function positOrNegat(numb){
+	if (i==0){
+		return ("Равно нулю");
+	} else if (i>0) {
+		return ("Больше нуля");
+	} else {
+		return ("Меньше нуля");
+	}
 }
+
+test1 = positOrNegat(i);
+console.log(test1);
 
 // task 6
 // спашивает имя и возвращает его в консоль
@@ -94,7 +102,6 @@ function factorial(numb) {
 }
 
 number=prompt("Факториал какого числа вас интересует?", '');
-test=factorial(number);
-console.log(test);
+console.log(factorial(number));
 
 
