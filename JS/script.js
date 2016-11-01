@@ -73,10 +73,10 @@ function isPrime(numb) {
 		if (numb == 1) { return ("Это не простое число (число 1)"); }
 		for (var i = 2; i < numb; i++) {
 			if (numb % i == 0) {
-				return ("Это не простое число");
+				return false;
 			}
 		}
-		return ("Это простое число");
+		return true;
 	}
 }
 
@@ -287,7 +287,7 @@ function frequentItem(array) {
 			if (n > max) { max = n; item = array[i]; }
 			n = 0;
 		}
-		return ("Наиболее частый элемент: " + item);
+		return (item);
 	}
 }
 
@@ -315,7 +315,6 @@ console.log("----Удалить дубликаты строк----");
 
 function delDubl(array) {
 	if (isArray(array)) {
-		console.log("было " + array);
 		var strLeng = array.length;
 		var arrayResult = array; //массив, который будем сравнивать и редактировать
 		for (i = 0; i < strLeng; i++) {
@@ -326,7 +325,7 @@ function delDubl(array) {
 			}
 		}
 	}
-	return ("стало " + arrayResult);
+	return (arrayResult);
 }
 
 console.log(delDubl([1, 2, 1, 4, 1]));
@@ -339,8 +338,6 @@ console.log("----Удалить дубликаты строк после сум�
 
 function delDublInSum(array, array1) {
 	if (isArray(array) && isArray(array1)) {
-		console.log("первый " + array);
-		console.log("второй " + array1);
 		array = array.concat(array1);
 		var strLeng = array.length;
 		var arrayResult = array; //массив, который будем сравнивать и редактировать
@@ -352,7 +349,7 @@ function delDublInSum(array, array1) {
 			}
 		}
 	}
-	return ("стало " + arrayResult);
+	return (arrayResult);
 }
 
 console.log(delDublInSum([1, 2, 1, 4, 1], [1, 8, 9, 2, 10]));
@@ -364,7 +361,6 @@ console.log("----Удалить определенный элемент из м�
 
 function delSpecific(el, array) {
 	if (isArray(array)) {
-		console.log("удалить " + el + " из [" + array + "]");
 		for (var i = 0; i < array.length; i++) {
 			if (el == array[i]) {
 				array.splice(i, 1);
@@ -429,7 +425,7 @@ function diffTime(time1, time2) {
 	var time = time2.valueOf() - time1.valueOf();
 	time = time / 1000 / 60 / 60 / 24;
 	time = time.toFixed(0);
-	return (time + " дней");
+	return (time);
 }
 
 console.log(diffTime(past, now));
