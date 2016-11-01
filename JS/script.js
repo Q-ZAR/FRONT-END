@@ -7,18 +7,15 @@ function calculateSome(){
         getResult: function(){
             return result;
         },
-        //сложение v.1
-        /*add: function(x){
+        //сложение
+        add: function (x) {
             result=result+x;
-        },*/
-        //сложение v.2
-        add: function(x){
-            return function(y){
-                x=x+y;
-                return x;
-            },
-            result=result+x;
+            return function sum(y) {
+                result=result+y;
+                return sum;
+            };
         },
+
 
         //вычитание
         subtract: function(x){
@@ -55,7 +52,7 @@ console.log(calc.getResult());
 calc.divide(2);
 console.log(calc.getResult());
 
-calc.add(3,1);
+calc.add(3)(1);
 console.log(calc.getResult());
 
 calc.reset();
