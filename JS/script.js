@@ -17,14 +17,13 @@ console.log("----Это отрицательное число?----");
 
 function isNegative(numb) {
 	if (isNumber(numb)) {
-		return (numb < 0);
+		return numb < 0;
 	} else {
-		//throw new Error('вообще не число');
-		return ("вообще не число");
+		throw new Error('not a number');
 	}
 }
 
-console.log(isNegative('road'));
+//console.log(isNegative('road'));
 console.log(isNegative(1233));
 console.log(isNegative(-1233));
 
@@ -37,11 +36,11 @@ function isPositive(numb) {
 	if (isNumber(numb)) {
 		return (numb > 0);
 	} else {
-		return ("вообще не число");
+		throw new Error('not a number');
 	}
 }
 
-console.log(isPositive('road'));
+//console.log(isPositive('road'));
 console.log(isPositive(1233));
 console.log(isPositive(-1233));
 
@@ -50,18 +49,19 @@ console.log(isPositive(-1233));
 // task 4 - факториал с рекурсией
 console.log("----Факториал----");
 
-function Factorial(numb) {
+function factorial(numb) {
 	if (isNumber(numb)) {
 		if (numb != 1) {
-			return numb * Factorial(numb - 1);
+			return numb * factorial(numb - 1);
 		} else {
 			return 1;
 		}
 	}
-	return ("вообще не число");
+
+	throw new Error('not a number');
 }
 
-console.log(Factorial(5));
+console.log(factorial(5));
 
 // Number
 // task 5 - простое число
@@ -70,7 +70,10 @@ console.log("----Простое число?----");
 function isPrime(numb) {
 	if (isPositive(numb)) {
 
-		if (numb == 1) { return ("Это не простое число (число 1)"); }
+		if (numb == 1) {
+			//return ("Это не простое число (число 1)"); 
+			return false;
+		}
 		for (var i = 2; i < numb; i++) {
 			if (numb % i == 0) {
 				return false;
@@ -80,6 +83,7 @@ function isPrime(numb) {
 	}
 }
 
+console.log(isPrime(1));
 console.log(isPrime(11));
 console.log(isPrime(12));
 
@@ -89,11 +93,7 @@ console.log("----!String!----");
 console.log("----Строка ли это?----");
 
 function isString(str) {
-	if (typeof (str) == "string") {
-		return true;
-	} else {
-		return false;
-	}
+	return (typeof (str) === "string");
 }
 
 console.log(isString(123));
@@ -105,8 +105,14 @@ console.log(isString(' '));
 console.log("----Можно ли преобразовать в число?----");
 
 function canParseToNumber(str) {
-	var strNumb = +str;
-	return isFinite(strNumb);
+	var result;
+
+	if (isString(str)) {
+		var strNumb = +str;
+
+		result = isFinite(strNumb);
+	} 
+	return result;
 }
 
 console.log(canParseToNumber("123"));
@@ -120,11 +126,11 @@ function getStringLength(str) {
 	if (isString(str)) {
 		return str.length;
 	} else {
-		return ("Это не строка");
+		throw new Error('not a string');
 	}
 }
 
-console.log(getStringLength(123));
+//console.log(getStringLength(123));
 console.log(getStringLength('road'));
 console.log(getStringLength(' '));
 
@@ -176,6 +182,7 @@ console.log("----Кол-во повторений элемента в строк
 
 function findOccurrences(el, str) {
 	var arr = str.split(el);
+
 	return arr.length - 1;
 }
 
@@ -188,15 +195,13 @@ console.log("----!Array!----");
 console.log("----Массив ли это?----");
 
 function isArray(array) {
-	if (typeof (array) == 'object')
-		return true;
-	else
-		return false;
+	return array instanceof Array;
 }
 
 console.log(isArray([1, 2, 3]));
 console.log(isArray([]));
 console.log(isArray());
+console.log(isArray(new Date));
 
 // Array
 // task 2 - Убираем элементы
@@ -204,13 +209,12 @@ console.log("----Убираем элементы----");
 
 function cleanArr(array) {
 	if (isArray(array)) {
-		console.log(array);
+		//console.log(array);
 		for (var i = 0; i < array.length; i++) {
-			if (array[i] == null || array[i] == 0 || array[i] == false || array[i] == undefined || isNaN(array[i])) {
+			if (!array[i]) {
 				delete array[i];
 			}
 		}
-
 		return array;
 	}
 }
@@ -223,20 +227,22 @@ console.log("----Максимальное значение в массиве----
 
 function maxValue(array) {
 	if (isArray(array)) {
+
 		var max = array[0];
+
 		for (var i = 1; i < array.length; i++) {
 			if (array[i] >= max) {
 				max = array[i];
 			}
 		}
 	} else {
-		return ("Это даже не массив")
+		throw new Error('not an array');
 	}
 	return max;
 }
 
 console.log(maxValue([1, 3, 6, 2, 0, 8, 10, 33, 3, 4]));
-console.log(maxValue("like array"));
+//console.log(maxValue("like array"));
 
 // Array
 // task 4 - минимальное значение в массиве
@@ -251,13 +257,13 @@ function minValue(array) {
 			}
 		}
 	} else {
-		return ("Это даже не массив")
+		throw new Error('not a string');
 	}
 	return min;
 }
 
 console.log(minValue([1, 3, 6, 2, 8, 10, 33, 3, 4]));
-console.log(minValue("like array"));
+//console.log(minValue("like array"));
 
 // Array
 // task 5 - строка в массив из слов
@@ -265,6 +271,7 @@ console.log("----Преобразовать строку в массив из с
 
 function stringToArray(str) {
 	var array = str.split(" ");
+
 	return array;
 }
 
@@ -277,17 +284,20 @@ console.log("----Найти наиболее частый элемент мас�
 
 function frequentItem(array) {
 	if (isArray(array)) {
+
 		var n = 0; // считает кол-во повторов
 		var max = 0; // самое большое кол-во повторов
 		var item; //повторяющееся число
+
 		for (var i = 0; i < array.length; i++) {
 			for (var j = 0; j < array.length; j++) {
 				if (array[j] == array[i]) { n = n + 1; }
 			}
 			if (n > max) { max = n; item = array[i]; }
+			//на всякий случай
 			n = 0;
 		}
-		return (item);
+		return item;
 	}
 }
 
@@ -301,8 +311,10 @@ console.log("----Клон массива----");
 
 function cloneArr(array) {
 	if (isArray(array)) {
-		console.log(array);
+		//console.log(array);
+
 		var clone = array.slice();
+
 		return clone;
 	}
 }
@@ -315,8 +327,10 @@ console.log("----Удалить дубликаты строк----");
 
 function delDubl(array) {
 	if (isArray(array)) {
+
 		var strLeng = array.length;
 		var arrayResult = array; //массив, который будем сравнивать и редактировать
+
 		for (i = 0; i < strLeng; i++) {
 			for (j = 0; j < strLeng; j++) {
 				if (array[i] == arrayResult[j] && i != j) {
@@ -325,7 +339,7 @@ function delDubl(array) {
 			}
 		}
 	}
-	return (arrayResult);
+	return arrayResult;
 }
 
 console.log(delDubl([1, 2, 1, 4, 1]));
@@ -339,8 +353,10 @@ console.log("----Удалить дубликаты строк после сум�
 function delDublInSum(array, array1) {
 	if (isArray(array) && isArray(array1)) {
 		array = array.concat(array1);
+
 		var strLeng = array.length;
 		var arrayResult = array; //массив, который будем сравнивать и редактировать
+
 		for (i = 0; i < strLeng; i++) {
 			for (j = 0; j < strLeng; j++) {
 				if (array[i] == arrayResult[j] && i != j) {
@@ -349,7 +365,7 @@ function delDublInSum(array, array1) {
 			}
 		}
 	}
-	return (arrayResult);
+	return arrayResult;
 }
 
 console.log(delDublInSum([1, 2, 1, 4, 1], [1, 8, 9, 2, 10]));
@@ -423,9 +439,10 @@ var past = new Date(1994, 9, 14, 21, 30, 0, 0);
 
 function diffTime(time1, time2) {
 	var time = time2.valueOf() - time1.valueOf();
+
 	time = time / 1000 / 60 / 60 / 24;
 	time = time.toFixed(0);
-	return (time);
+	return time;
 }
 
 console.log(diffTime(past, now));
@@ -441,6 +458,7 @@ function formatDate(date) {
 	var month = +(date.getMonth()) + 1;
 	var hours = date.getHours();
 	var minutes = date.getMinutes();
+	
 	return ("сейчас " + day + "." + month + " время " + hours + ":" + minutes);
 }
 
@@ -451,8 +469,8 @@ console.log(formatDate(now));
 console.log("----Получить текущую дату----");
 
 function nowDate() {
-	var now = new Date();
-	return now;
+	var past = new Date(1994, 9, 14, 21, 30, 0, 0);
+	return formatDate(past);
 }
 
 console.log(nowDate());
