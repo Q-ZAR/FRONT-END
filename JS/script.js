@@ -1,59 +1,99 @@
-function calculateSome(){
-    //начальное значение
-    var result=0;
+//check number
+var Utils = (function () {
+    'use strict';
 
-    //получить результат
+    function isNumber(x) {
+        return !isNaN(parseFloat(x)) && isFinite(x);
+    }
     return {
-        getResult: function(){
-            return result;
-        },
-        //сложение
-        add: function (x) {
-            result=result+x;
-            return function sum(y) {
-                result=result+y;
-                return sum;
-            };
-        },
-
-
-        //вычитание
-        subtract: function(x){
-            result=result-x;
-        },
-        //умножение
-        multiply: function(x){
-            result=result*x;
-        },
-        //деление
-        divide: function(x){
-            result=result/x;
-        },
-        //сброс
-        reset : function(){
-            result=0;
-        }
+        isNumber: isNumber
     };
-}
+} ());
 
-var calc = calculateSome();
+//library of Calculator
+var Calculator = (function (Utils) {
+    'use strict';
+    /**
+             */
+    function Calculator() {
+        // Initial value
+        var result = 0;
 
-console.log(calc.getResult());
+        function getResult() {
+            return result;
+        }
 
-calc.add(3);
-console.log(calc.getResult());
+        function add(x) {
+            if (Utils.isNumber(x)) {
+                result = result + x;
+            } else {
+                throw new Error();
+            }
 
-calc.subtract(1);
-console.log(calc.getResult());
+            return add;
+        }
+        //вычитание
+        function subtract(x) {
+            if (Utils.isNumber(x)) {
+                result = result - x;
+                
+            } else {
+                throw new Error();
+            }
+            return subtract;
+        }
 
-calc.multiply(4);
-console.log(calc.getResult());
+        //умножение
+        function multiply(x) {
+            if (Utils.isNumber(x)) {
+                result = result * x;
+                
+            } else {
+                throw new Error();
+            }
+            return multiply;
+        }
 
-calc.divide(2);
-console.log(calc.getResult());
+        //деление
+        function divide(x) {
+            if (Utils.isNumber(x)) {
+                result = result / x;
+                
+            } else {
+                throw new Error();
+            }
+            return divide;
+        }
 
-calc.add(3)(1);
-console.log(calc.getResult());
+        //сброс
+        function reset() {
+            result = 0;
+        }
 
-calc.reset();
-console.log(calc.getResult());
+        return {
+            getResult: getResult,
+            add: add,
+            subtract: subtract,
+            multiply: multiply,
+            divide: divide,
+            reset: reset
+        };
+    }
+
+    return new Calculator();
+} (Utils));
+
+//practice
+console.log(Calculator.getResult());
+Calculator.add(3);
+console.log(Calculator.getResult());
+Calculator.add(2)(1);
+console.log(Calculator.getResult());
+Calculator.subtract(2);
+console.log(Calculator.getResult());
+Calculator.multiply(3);
+console.log(Calculator.getResult());
+Calculator.divide(3);
+console.log(Calculator.getResult());
+Calculator.reset();
+console.log(Calculator.getResult());
