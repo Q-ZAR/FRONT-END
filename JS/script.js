@@ -36,25 +36,24 @@ function isOdd(num) {
 
 test9 = (chet());
 
-//пустая лт введенная строка?!
+//пустая ли введенная строка?!
 
 var string = prompt("Введи строку для проверки", "Строку типа такой");
 
-function emptyString(str) {
-	if (Boolean(string) == false) {
-		return ("Строка \'" + string + "\' является пустой  ");
-	} else {
-		return ("В строке \'" + string + "\' есть символы  ");
-	}
+function emptyString(string) {
+	string=string.replace(/ /g,"");
+	return string === "";
 }
 
 console.log(emptyString(string));
 // task 2
 //строка - палиндром?
 
+console.log(str + "- это палиндром? ");
+
 function strPalindrome(str) {
-	console.log(str + "- это палиндром? ");
 	str = str.replace(/ /g, ''); //удалит все пробелы
+
 	var strLeng = str.length;
 	var result;
 
@@ -91,10 +90,13 @@ test4 = (strCombo("kitty"));
 
 //сортировка пузырьком для строки
 
+console.log("Отсотрируем в алфавитном порядке: ");
+
 function bubbleSort(str) {
-	console.log("Отсотрируем " + str + " в алфавитном порядке. ");
+
 	var strLeng = str.length;
 	str = str.split('');
+
 	//сделаем внешний цикл повторений операций
 	for (var l = 0; l <= strLeng; l++) { 
 
@@ -119,19 +121,22 @@ console.log(bubbleSort("nvdfjhviudtgdjebca"));
 
 function bigWord(line) {
 	line = line.split(' ');
+
 	var arrOfLeng = [];
 	var result;
+
 	for (var i = 0; i <= line.length - 1; i++) {
 		arrOfLeng[i] = line[i].length;
 	}
-	var max = Math.max.apply(null, arrOfLeng);
 
+	var max = Math.max.apply(null, arrOfLeng);
 
 	for (var i = 0; i <= line.length - 1; i++) {
 		if (line[i].length == max) {
 			result = line[i];
 		}
 	}
+
 	return result;
 }
 
@@ -140,8 +145,9 @@ console.log(bigWord("Kitty in the garden"));
 
 //уникальные символы
 
+console.log("уникальные символы");
+
 function uniq(line) {
-	console.log("строка с повторами: " + line + "");
 	var strLeng = line.length;
 	line = line.split(''); //сделает массив из буковок	
 	var lineResult = line; 
