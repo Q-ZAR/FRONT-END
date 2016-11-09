@@ -13,75 +13,93 @@ var Utils = (function () {
 //library of Calculator
 var Calculator = (function (Utils) {
     'use strict';
+    var result=0;
 
-    var Work = {
-        result: 0,
+    function getResult() {
+        return this.result;
+    }
 
+    function add(x) {
+        if (Utils.isNumber(x)) {
+            this.result = this.result + x;
+        } else {
+            throw new Error();
+        }
 
-        getResult: function getResult() {
-            return this.result;
-        },
+        return this;
+    }
 
-        add: function add(x) {
-            if (Utils.isNumber(x)) {
-                this.result = this.result + x;
-            } else {
-                throw new Error();
-            }
+    function subtract(x) {
+        if (Utils.isNumber(x)) {
+            this.result = this.result - x;
 
-            return this;
-        },
+        } else {
+            throw new Error();
+        }
+        return this;
+    }
 
-        substract: function subtract(x) {
-            if (Utils.isNumber(x)) {
-                this.result = this.result - x;
+    function multiply(x) {
+        if (Utils.isNumber(x)) {
+            this.result = this.result * x;
 
-            } else {
-                throw new Error();
-            }
-            return this;
-        },
+        } else {
+            throw new Error();
+        }
+        return this;
+    }
 
-        multiply: function multiply(x) {
-            if (Utils.isNumber(x)) {
-                this.result = this.result * x;
+    function divide(x) {
+        if (Utils.isNumber(x)) {
+            this.result = this.result / x;
 
-            } else {
-                throw new Error();
-            }
-            return this;
-        },
+        } else {
+            throw new Error();
+        }
+        return this;
+    }
 
-        divide: function divide(x) {
-            if (Utils.isNumber(x)) {
-                this.result = this.result / x;
+    function reset() {
+        this.result = 0;
+        return this;
+    }
 
-            } else {
-                throw new Error();
-            }
-            return this;
-        },
+    //server
+    function serverReq(state) {
+        this.result = state;
+        //return this;
+    }
 
-        reset: function reset() {
-            this.result = 0;
-            return this;
-        },
+    //callback
+    function getInitialState(callback) {
+        // Setting timeout to emulate a request to a server
+        var that = this;
 
-    } // end Work
+        setTimeout(function () {
+            // Set calculator state here
+            serverReq.call(that, 5);
+            callback();
+        }, 5000);
+    }
 
     return {
-        getResult: Work.getResult,
-        result: Work.result,
-        add: Work.add,
-        subtract: Work.subtract,
-        divide: Work.divide,
-        multiply: Work.multiply,
-        reset: Work.reset
+        getResult: getResult,
+        add: add,
+        substract: subtract,
+        multiply: multiply,
+        divide: divide,
+        reset: reset,
+        serverReq: serverReq,
+        getInitialState: getInitialState,
     };
 
 } (Utils));
 
-//practice
-console.log(Calculator.getResult());
-Calculator.add(3).divide(2).multiply(4);
-console.log(Calculator.getResult());
+
+Calculator.getInitialState(function () {
+    //practice
+    console.log(Calculator.getResult());
+    console.log(Calculator.add(3).divide(3).multiply(7).getResult());
+});
+
+
