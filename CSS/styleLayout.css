@@ -146,12 +146,12 @@ summary {
 
 .partmenu.button {
 	box-sizing: border-box;
-	padding: 35px 0;
+	padding: 30px 0;
 }
 .button__input{
 	margin: 10px 0 -30px 0;
 }
-.button__input__autor,.button__input__title{
+.button__input__autor,.button__input__title,.button__input__submit{
 	display: inline-block;
 	width: 160px;
 	margin: 0 0 10px 20px;
@@ -167,6 +167,20 @@ summary {
 .partmenu.nav:nth-child(3), .partmenu.news{
 	padding: 20px 0 20px 0;
 }
+.button__input__submit {
+	width: 160px;
+	height: 44px;
+	font-size: 14px;
+	background-color: #f2795a;
+	color: white;
+	padding: 5px;
+	box-sizing: border-box;
+	border:0;
+	border-radius: 3px;
+	line-height: 34px;
+}
+
+/*
 .btn {
 	width: 160px;
 	height: 44px;
@@ -179,21 +193,19 @@ summary {
 	border-radius: 3px;
 	line-height: 34px;
 	margin: 0 auto;
-}
-
 .btn a{
 	height: 100%;
 	width: 100%;
 	display: block;
 	color: white;
-}
+}*/
 
-.btn a span{
+/*.btn a span{
 	font-size: 21px;
     font-weight: bold;
     padding: 0 17px;
 }
-
+*/
 
 .nav, .news{
 	font-size: 13px;
@@ -551,10 +563,14 @@ width: 3px;
 	background-size: 15px 15px;
 }
 */
-.book-stars>.star{
+.star{
 	background: url(../icon/star-empty.png) no-repeat 50%;
 	background-size: 15px 15px;}
-.book-stars>.star:hover{
+.star:hover{
+	background: url(../icon/star-full.png) no-repeat 50%;
+	background-size: 15px 15px;}
+
+.star-full{
 	background: url(../icon/star-full.png) no-repeat 50%;
 	background-size: 15px 15px;}
 /* Работа с нижней частью */
