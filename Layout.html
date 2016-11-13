@@ -22,7 +22,7 @@
 
 			<div class="partmenu button">
 				<!--<div class="btn"><a href="#"><span>+</span>ADD A BOOK</a></div>-->
-				<form id="addNewBook" onsubmit="addNewBook(library); return false;" action="" method="post" class="partmenu button__input">
+				<form id="addNewBook" onsubmit="Posting.addNewBook(BookDB.library); return false;" action="" method="post" class="partmenu button__input">
 					<input type="submit" class="partmenu button__input__submit  btn" value="+ ADD A BOOK" />
 					<input id="addAutor" type="text" name="" placeholder="Autor" class="partmenu button__input__autor" required/>
 					<input id="addTitle" type="text" name="" placeholder="Title" value="" class="partmenu button__input__title" required/>
@@ -56,13 +56,13 @@
 			<div class="cont-wrap">
 				<div class="small-header">Browse Available Books</div>
 				<div class="small-menu">
-					<div class="small-menu__item"><a id="allBook" onclick="showAll(library);return false;" class="small-menu__item__link" href="">All Books</a></div>
-					<div class="small-menu__item"><a id="recBook" onclick="showMostRecent(library);return false;" class="small-menu__item__link" href="">Most Recent</a></div>
-					<div class="small-menu__item"><a id="popBook" onclick="showMostPopular(library);return false;" class="small-menu__item__link" href="">Most Popular</a></div>
+					<div class="small-menu__item"><a id="allBook" onclick="Filters.showAll(BookDB.library);return false;" class="small-menu__item__link" href="">All Books</a></div>
+					<div class="small-menu__item"><a id="recBook" onclick="Filters.showMostRecent(BookDB.library);return false;" class="small-menu__item__link" href="">Most Recent</a></div>
+					<div class="small-menu__item"><a id="popBook" onclick="Filters.showMostPopular(BookDB.library);return false;" class="small-menu__item__link" href="">Most Popular</a></div>
 					<div class="small-menu__item"><a class="small-menu__item__link" href="">Free Books</a></div>
 
 					<form action="" method="post" class="small-menu__search">
-						<input id="searchItem" type="search" name="" placeholder="Enter Keywords" class="small-menu__search__input" />
+						<input oninput="SearchMod.oninput();" id="searchItem" type="search" name="" placeholder="Enter Keywords" class="small-menu__search__input" />
 						<input type="submit" name="" value="" class="small-menu__search__submit" />
 					</form>
 				</div>
