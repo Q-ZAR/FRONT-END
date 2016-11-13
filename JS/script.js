@@ -51,9 +51,9 @@ function createBook(book, i) {
     result += "</div>";
 
     return result;
-    //} else {
-    // throw new Error('');
-    //}
+    /*} else {
+     throw new Error('');
+    }*/
 }
 
 function addStar(book, i) {
@@ -64,12 +64,10 @@ function addStar(book, i) {
     for (var j = 0; j < 5; j++) {
         starNum = j;
         if (starNumb > 0) {
-            //resultStar += "<div class='star star-full' onclick='addStars(" + bookNum + "," + starNum + ");'></div>";
             resultStar += "<div class='star star-full' onmouseout='hovStarsOut(" + bookNum + "," + starNum + ")' onmouseover='hovStars(" + bookNum + "," + starNum + ")' onclick='addStars(" + bookNum + "," + starNum + ");'></div>";
             starNumb--;
         } else {
             resultStar += "<div class='star ' onmouseout='hovStarsOut(" + bookNum + "," + starNum + ")' onmouseover='hovStars(" + bookNum + "," + starNum + ")' onclick='addStars(" + bookNum + "," + starNum + ");'></div>";
-            //resultStar += "<div class='star' onclick='addStars(" + bookNum + "," + starNum + ");'></div>";
         }
     }
     return resultStar;
@@ -90,8 +88,6 @@ function showAll(arr) {
 
 //показать только популярные
 function showMostPopular(arr) {
-    //var clickPlace = document.getElementById(event.target.id);
-    //clickPlace.classList.add(" small-menu__item__link--active");
     removeChildren($books);
     for (var i = 0; i < arr.length; i++) {
         if (+arr[i].stars > 3) {
@@ -142,7 +138,7 @@ function showNews(arr) {
     for (var i = arr.length - 1; i >= 0; i--) {
         $news.innerHTML += createNews(arr[i]);
     }
-}
+};
 
 showNews(news);
 
@@ -152,7 +148,20 @@ function createNews(arr) {
     var showDate = currentDate.valueOf() - arr.date.valueOf();
     showDate = showDate / 1000 / 60;
     showDate = showDate.toFixed(0);
-    var result = "<div class='nav-item'><p>" + arr.text + "</p><p>" + showDate + " minutes ago" + "</p></div>";
+    var result;
+
+    if (showDate < 60) {
+        result = "<div class='nav-item'><p>" + arr.text + "</p><p>" + showDate + " minutes ago" + "</p></div>";
+    }
+    if (showDate >= 60 && showDate <1440) {
+        showDate = (showDate / 60).toFixed(0);
+        result = "<div class='nav-item'><p>" + arr.text + "</p><p>" + showDate + "  hours ago" + "</p></div>";
+    }
+    if (showDate >= 1440) {
+        showDate = (showDate / 60 / 24).toFixed(0);
+        result = "<div class='nav-item'><p>" + arr.text + "</p><p>" + showDate + "  days ago" + "</p></div>";
+    }
+
     return result;
 }
 
@@ -171,64 +180,57 @@ function addNews(formAutor, formTitle) {
 function addStars(bookNum, starNum) {
     library[bookNum].stars = starNum + 1;
     var changBook = document.getElementById("part" + bookNum);
-    //createBook(bookNum, i);
     addStar(library[bookNum], bookNum);
-    //showBooks(library);
 }
 
 //подсветка звезд при наведении
 function hovStars(bookNum, starNum) {
     var starsBlock = event.target;
-    var starsBlockMom=starsBlock.parentElement;
-    //console.log(starsBlockMom);
+    var starsBlockMom = starsBlock.parentElement;
+
     for (var i = 0; i < 5; i++) {
         starsBlockMom.children[i].classList.remove('star-full');
     }
-    
-    var k=0;
-    while (starsBlockMom.children[k] !== event.target){
+
+    var k = 0;
+    while (starsBlockMom.children[k] !== event.target) {
         starsBlockMom.children[k].classList.add('star-full');
         k++;
     }
     event.target.classList.add('star-full');
-    console.log(starsBlockMom);
 }
 
 //выставление по-умолчанию звезд
-function hovStarsOut(bookNum, starNum){
+function hovStarsOut(bookNum, starNum) {
     var starsBlock = event.target;
-    var starsBlockMom=starsBlock.parentElement;
-    returnStars(starsBlockMom,bookNum);
+    var starsBlockMom = starsBlock.parentElement;
+    returnStars(starsBlockMom, bookNum);
 }
 
-function returnStars(place,i){
+function returnStars(place, i) {
     var block = place;
     removeChildren(block);
     var text = addStar(library[i], i);
-    block.innerHTML=text;
+    block.innerHTML = text;
 }
 
 //поиск по сайту
 var input = document.getElementById("searchItem");
 var searchLibrary = [];
 
-//console.log(input);
-
 input.oninput = function () {
     var searchWord = searchItem.value;
-    //console.log(searchWord);
+
     for (var i = 0; i < library.length; i++) {
         var a = library[i].autor;
-        var place = a.indexOf(searchWord);
-        //console.log(a);
-        //console.log(place);
-        if (place !== -1) {
+        var b = library[i].title;
+        var placeA = a.indexOf(searchWord);
+        var placeB = b.indexOf(searchWord);
+
+        if (placeA !== -1 || placeB !== -1) {
             searchLibrary.push(library[i]);
-            //delete searchLibrary[i];
-            //searchLibrary.splice(i, 1,'no');
         }
     }
-    //console.log(searchLibrary);
     showBooks(searchLibrary);
     searchLibrary = [];
 };
