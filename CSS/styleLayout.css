@@ -566,14 +566,15 @@ width: 3px;
 .star{
 	background: url(../icon/star-empty.png) no-repeat 50%;
 	background-size: 15px 15px;}
-.star:hover{
+/*.star:hover{
 	background: url(../icon/star-full.png) no-repeat 50%;
 	background-size: 15px 15px;}
-
+*/
 .star-full{
 	background: url(../icon/star-full.png) no-repeat 50%;
 	background-size: 15px 15px;}
 /* Работа с нижней частью */
+
 
 .right-part-footer{
 	float: right;

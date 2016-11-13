@@ -1,23 +1,24 @@
 'use strict';
 
-function Book(image, title, autor, stars) { /*конструктор библиотеки книг*/
+function Book(image, title, autor, stars, time) { /*конструктор библиотеки книг*/
     this.image = image; //фото
     this.title = title; //название книги
     this.autor = autor; //автор книги
     this.stars = stars; //звездность книги
+    this.time = time; //время добавления книги
 }
 
 var booksState = [
-    new Book('book-pics/pic-1.jpg', "Jewels of Nizam", "Geeta Devi", "4"),
-    new Book('book-pics/pic-2.jpg', "Cakes &amp; Bakes", "Sanjeev Kapoor", "5"),
-    new Book('book-pics/pic-3.jpg', "Jamie's Kitchen", "Jamie Oliver", "3"),
-    new Book('book-pics/pic-4.jpg', "Inexpensive Family Meals", "Simon Holst", "0"),
-    new Book('book-pics/pic-5.jpg', "Paleo Slow Cooking", "Chrissy Gower", "1"),
-    new Book('book-pics/pic-6.jpg', "Cook Like an Italian", "Tobie Puttock", "1"),
-    new Book('book-pics/pic-7.jpg', "Suneeta Vaswani", "Geeta Davi", "0"),
-    new Book('book-pics/pic-8.jpg', "Jamie Does", "Jamie Oliver", "0"),
-    new Book('book-pics/pic-9.jpg', "Jamie's italy", "Jamie Oliver", "0"),
-    new Book('book-pics/pic-10.jpg', "Vegetables Cookbook", "Matthew Biggs", "0")
+    new Book('book-pics/pic-1.jpg', "Jewels of Nizam", "Geeta Devi", "4", new Date(2015, 10, 12, 13, 20)),
+    new Book('book-pics/pic-2.jpg', "Cakes &amp; Bakes", "Sanjeev Kapoor", "5", new Date(2016, 10, 12, 13, 20)),
+    new Book('book-pics/pic-3.jpg', "Jamie's Kitchen", "Jamie Oliver", "3", new Date(2016, 10, 12, 13, 20)),
+    new Book('book-pics/pic-4.jpg', "Inexpensive Family Meals", "Simon Holst", "0", new Date(2016, 10, 12, 13, 20)),
+    new Book('book-pics/pic-5.jpg', "Paleo Slow Cooking", "Chrissy Gower", "1", new Date(2016, 9, 12, 13, 20)),
+    new Book('book-pics/pic-6.jpg', "Cook Like an Italian", "Tobie Puttock", "1", new Date(2016, 9, 12, 13, 20)),
+    new Book('book-pics/pic-7.jpg', "Suneeta Vaswani", "Geeta Davi", "0", new Date(2016, 10, 12, 13, 20)),
+    new Book('book-pics/pic-8.jpg', "Jamie Does", "Jamie Oliver", "0", new Date(2016, 7, 12, 13, 20)),
+    new Book('book-pics/pic-9.jpg', "Jamie's italy", "Jamie Oliver", "0", new Date(2016, 10, 12, 13, 20)),
+    new Book('book-pics/pic-10.jpg', "Vegetables Cookbook", "Matthew Biggs", "0", new Date(2016, 4, 12, 13, 20))
 ];
 
 //с ней буду работать
@@ -44,7 +45,7 @@ function createBook(book, i) {
     result += "<a href='http://yandex.ru'><img src='" + book.image + "' alt='book1' />";
     result += "<div class='book-name'>" + book.title + "</div></a>";
     result += "<div class='book-autor'> by " + book.autor + "</div>";
-    result += "<div class='book-stars'>";
+    result += "<div class='book-stars' id='starsBlock" + i + "'>";
     result += addStar(book, i);
     result += "</div>";
     result += "</div>";
@@ -58,15 +59,17 @@ function createBook(book, i) {
 function addStar(book, i) {
     var bookNum = i;
     var starNum;
-    var starNumb = +book.stars;
+    var starNumb = book.stars;
     var resultStar = '';
     for (var j = 0; j < 5; j++) {
         starNum = j;
         if (starNumb > 0) {
-            resultStar += "<div class='star star-full' onclick='addStars(" + bookNum + "," + starNum + ");'></div>";
+            //resultStar += "<div class='star star-full' onclick='addStars(" + bookNum + "," + starNum + ");'></div>";
+            resultStar += "<div class='star star-full' onmouseout='hovStarsOut(" + bookNum + "," + starNum + ")' onmouseover='hovStars(" + bookNum + "," + starNum + ")' onclick='addStars(" + bookNum + "," + starNum + ");'></div>";
             starNumb--;
         } else {
-            resultStar += "<div class='star' onclick='addStars(" + bookNum + "," + starNum + ");'></div>";
+            resultStar += "<div class='star ' onmouseout='hovStarsOut(" + bookNum + "," + starNum + ")' onmouseover='hovStars(" + bookNum + "," + starNum + ")' onclick='addStars(" + bookNum + "," + starNum + ");'></div>";
+            //resultStar += "<div class='star' onclick='addStars(" + bookNum + "," + starNum + ");'></div>";
         }
     }
     return resultStar;
@@ -97,18 +100,28 @@ function showMostPopular(arr) {
     }
 }
 
+//показать самые новые
+function showMostRecent(arr) {
+    removeChildren($books);
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i].time > new Date(2016, 9, 12, 13, 20)) {
+            $books.innerHTML += createBook(arr[i], i);
+        }
+    }
+}
+
 //добавление новой книги
 function addNewBook(arr) {
     var form = document.forms["addNewBook"];
     var formAutor = form.elements["addAutor"];
     var formTitle = form.elements["addTitle"];
-    var newBook = new Book("book-pics/pic-special.jpg", formTitle.value, formAutor.value, "0");
+    var newBook = new Book("book-pics/pic-special.jpg", formTitle.value, formAutor.value, "0", new Date());
     arr.push(newBook);
     //вызов
     showBooks(arr);
     addNews(formAutor, formTitle);
-    formTitle.value="";
-    formAutor.value="";
+    formTitle.value = "";
+    formAutor.value = "";
 }
 
 //создание новостей
@@ -118,8 +131,8 @@ function News(text, date) { /*конструктор библиотеки нов
 }
 
 var news = [
-    new News("You added <span>Fight Club</span> by <span>Chuck Palahnuik</span> to your <span>Must Read Item</span>", { day: 11, month: 11, year: 2016, hour: 14, minutes: 30 }),
-    new News("You added <span>The Trial</span> by <span>Franz Kafka</span> to your <span>Must Read Titles</span>", { day: 11, month: 11, year: 2016, hour: 14, minutes: 54 }),
+    new News("You added <span>Fight Club</span> by <span>Chuck Palahnuik</span> to your <span>Must Read Titles</span>", new Date(2016, 10, 12, 13, 20)),
+    new News("You added <span>The Trial</span> by <span>Franz Kafka</span> to your <span>Must Read Titles</span>", new Date(2016, 10, 12, 13, 30)),
 ];
 
 var $news = document.getElementById("newsBlock");
@@ -135,18 +148,19 @@ showNews(news);
 
 //делает текст для вставки
 function createNews(arr) {
-    var showDate = "12.12.12";
-    var showDate = arr.date.day + "." + arr.date.month + "." + arr.date.year + "  " + arr.date.hour + ":" + arr.date.minutes;
-    var result = "<div class='nav-item'><p>" + arr.text + "</p><p>" + showDate + "</p></div>";
+    var currentDate = new Date();
+    var showDate = currentDate.valueOf() - arr.date.valueOf();
+    showDate = showDate / 1000 / 60;
+    showDate = showDate.toFixed(0);
+    var result = "<div class='nav-item'><p>" + arr.text + "</p><p>" + showDate + " minutes ago" + "</p></div>";
     return result;
 }
 
 //добавляет новую новость в массив
 function addNews(formAutor, formTitle) {
     removeChildren($news);
-    var text = "You added <span>" + formTitle.value + "</span> by <span>" + formAutor.value + "</span> to your <span>Must Read Item</span>";
-    var newDate = new Date();
-    var date = { day: newDate.getDay(), month: newDate.getMonth() + 1, year: newDate.getFullYear(), hour: newDate.getHours(), minutes: newDate.getMinutes() };
+    var text = "You added <span>" + formTitle.value + "</span> by <span>" + formAutor.value + "</span> to your <span>Must Read Titles</span>";
+    var date = new Date();
     var newNews = new News(text, date);
     news.push(newNews);
     showNews(news);
@@ -158,10 +172,41 @@ function addStars(bookNum, starNum) {
     library[bookNum].stars = starNum + 1;
     var changBook = document.getElementById("part" + bookNum);
     //createBook(bookNum, i);
-    showBooks(library);
+    addStar(library[bookNum], bookNum);
+    //showBooks(library);
 }
 
 //подсветка звезд при наведении
+function hovStars(bookNum, starNum) {
+    var starsBlock = event.target;
+    var starsBlockMom=starsBlock.parentElement;
+    //console.log(starsBlockMom);
+    for (var i = 0; i < 5; i++) {
+        starsBlockMom.children[i].classList.remove('star-full');
+    }
+    
+    var k=0;
+    while (starsBlockMom.children[k] !== event.target){
+        starsBlockMom.children[k].classList.add('star-full');
+        k++;
+    }
+    event.target.classList.add('star-full');
+    console.log(starsBlockMom);
+}
+
+//выставление по-умолчанию звезд
+function hovStarsOut(bookNum, starNum){
+    var starsBlock = event.target;
+    var starsBlockMom=starsBlock.parentElement;
+    returnStars(starsBlockMom,bookNum);
+}
+
+function returnStars(place,i){
+    var block = place;
+    removeChildren(block);
+    var text = addStar(library[i], i);
+    block.innerHTML=text;
+}
 
 //поиск по сайту
 var input = document.getElementById("searchItem");
@@ -171,19 +216,19 @@ var searchLibrary = [];
 
 input.oninput = function () {
     var searchWord = searchItem.value;
-    console.log(searchWord);
+    //console.log(searchWord);
     for (var i = 0; i < library.length; i++) {
-        var a=library[i].autor;
+        var a = library[i].autor;
         var place = a.indexOf(searchWord);
-        console.log(a);
-        console.log(place);
-        if (place !==-1) {
+        //console.log(a);
+        //console.log(place);
+        if (place !== -1) {
             searchLibrary.push(library[i]);
             //delete searchLibrary[i];
             //searchLibrary.splice(i, 1,'no');
         }
     }
-    console.log(searchLibrary);
+    //console.log(searchLibrary);
     showBooks(searchLibrary);
     searchLibrary = [];
 };
