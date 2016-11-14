@@ -25,7 +25,7 @@ var View = (function (BookStorage, Utils, BookModel, NotificationModel, Notifica
         }
     }
 
-    showBooks(library);
+    //showBooks(library);
 
     //создание первой части кода (без звезд)
     function createBook(book, i) {
@@ -80,7 +80,7 @@ var View = (function (BookStorage, Utils, BookModel, NotificationModel, Notifica
         }
     };
 
-    showNews(NotificationStorage.news);
+    //showNews(NotificationStorage.news);
 
     //делает текст для вставки
     function createNews(arr) {
@@ -110,10 +110,10 @@ var View = (function (BookStorage, Utils, BookModel, NotificationModel, Notifica
     }
 
     return {
-        library: library,
-        showBooks: showBooks, //код блока книг
-        createBook: createBook,
-        addStar: addStar, //код звезд
+        library: library, //массив книг
+        showBooks: showBooks, //показать код блока книги
+        createBook: createBook,// создаю все кроме звезд
+        addStar: addStar, // создаю код звезд
         showNews: showNews, //показать новости на странице
     }
 
