@@ -99,7 +99,7 @@ summary {
 
 .login::before{
 	content: "";
-	background: url('../icon/login.jpg') no-repeat center;
+	background: url('../assets/icon/login.jpg') no-repeat center;
 	background-size: 30px 30px;
 	position: absolute;
 	left: 10px;
@@ -111,7 +111,7 @@ summary {
 }
 .login:after{
 	content: "";
-	background: url('../icon/arrow.png') no-repeat center;
+	background: url('../assets/icon/arrow.png') no-repeat center;
 	background-size: 23px 23px;
 	position: absolute;
 	right: 12px;
@@ -260,7 +260,7 @@ summary {
 	position: absolute;
 	left: 24px;
 	top: 12px;
-	background: url('../icon/menu.png') no-repeat;
+	background: url('../assets/icon/menu.png') no-repeat;
 	background-size: 36px 24px;
 	background-position: 0 0;
 }
@@ -315,7 +315,7 @@ summary {
 }
 .news>.nav-item::before{
 	content: "";
-	background: url('../icon/clock.png') no-repeat center;
+	background: url('../assets/icon/clock.png') no-repeat center;
 	background-size: 12px 12px;
 	width: 23px;
 	height: 23px;
@@ -564,14 +564,14 @@ width: 3px;
 }
 */
 .star{
-	background: url(../icon/star-empty.png) no-repeat 50%;
+	background: url(../assets/icon/star-empty.png) no-repeat 50%;
 	background-size: 15px 15px;}
 /*.star:hover{
 	background: url(../icon/star-full.png) no-repeat 50%;
 	background-size: 15px 15px;}
 */
 .star-full{
-	background: url(../icon/star-full.png) no-repeat 50%;
+	background: url(../assets/icon/star-full.png) no-repeat 50%;
 	background-size: 15px 15px;}
 /* Работа с нижней частью */
 
@@ -603,10 +603,10 @@ width: 3px;
 	background-color: #0D8EFC;
 }
 .question{
-	background: url(../icon/question.png) no-repeat 50%;
+	background: url(../assets/icon/question.png) no-repeat 50%;
 	background-size: 15px 15px;
 }
 .settings{
-	background: #0D8EFC url(../icon/settings.png) no-repeat 50%;
+	background: #0D8EFC url(../assets/icon/settings.png) no-repeat 50%;
 	background-size: 15px 15px;
 }
