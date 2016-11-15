@@ -21,10 +21,11 @@
 		<aside class="left-side">
 
 			<div class="partmenu button">
-				<form id="addBtn" method="post" class="partmenu button__input">
+				<form id="addBtn" method="post" class="partmenu button__input" enctype="multipart/form-data">
 					<input type="submit" class="partmenu button__input__submit  btn" value="+ ADD A BOOK" />
 					<input id="addAutor" type="text" name="" placeholder="Autor" class="partmenu button__input__autor" required/>
-					<input id="addTitle" type="text" name="" placeholder="Title" value="" class="partmenu button__input__title" required/>
+					<input id="addTitle" type="text" name="" placeholder="Title" class="partmenu button__input__title" required/>
+					<input id="addPic" type="file" name="" placeholder="Title" class="partmenu button__input__pic" required/>
 				</form>
 			</div>
 
@@ -88,8 +89,8 @@
 	<script type="text/javascript" src="js/storage/notifications.storage.js"></script>
 	<script type="text/javascript" src="js/view/view.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/controller/books.controller.js"></script>
 	<script type="text/javascript" src="js/controller/notifications.controller.js"></script>
+	<script type="text/javascript" src="js/controller/books.controller.js"></script>
 	<script type="text/javascript" src="js/event/event.js"></script>
 </body>
 

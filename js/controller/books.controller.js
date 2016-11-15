@@ -1,4 +1,4 @@
-var Controller = (function (Utils, View, BookModel) {
+var Controller = (function (Utils, View, BookModel, NotifController) {
 
     'use strict';
 
@@ -64,6 +64,7 @@ var Controller = (function (Utils, View, BookModel) {
         View.library[bookNum].stars = starNum + 1;
         var changBook = document.querySelector("#part" + bookNum);
         View.addStar(View.library[bookNum], bookNum);
+        NotifController.newStarsOnBook(starNum+1, View.library[bookNum].title);
     }
 
     //подсветка звезд при наведении
@@ -106,7 +107,12 @@ var Controller = (function (Utils, View, BookModel) {
         var form = document.forms["addBtn"];
         var formAutor = form.elements["addAutor"];
         var formTitle = form.elements["addTitle"];
-        var newBook = new BookModel.Book("assets/book-pics/pic-special.jpg", formTitle.value, formAutor.value, "0", new Date());
+        var formPic = form.elements["addPic"];
+        var formPicPic=formPic.value.slice(12);
+        formPicPic ="assets/book-pics/"+formPicPic;
+        //c:\fakepath\IMG_0255.jpg
+        //"assets/book-pics/pic-special.jpg"
+        var newBook = new BookModel.Book(formPicPic, formTitle.value, formAutor.value, "0", new Date());
         arr.push(newBook);
         //вызов
         View.showBooks(arr);
@@ -126,4 +132,4 @@ var Controller = (function (Utils, View, BookModel) {
         addNewBook:addNewBook,
     };
 
-} (Utils, View, BookModel))
+} (Utils, View, BookModel, NotifController))

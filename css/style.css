@@ -164,6 +164,17 @@ summary {
     color: #555555;
     outline: none;
 }
+.button__input__pic{
+	display: inline-block;
+	width: 160px;
+	margin: 0 0 10px 20px;
+    font: 10px Tahoma, Arial, sans-serif;
+    color: #555555;
+    outline: none;
+	border-radius: 5px;
+	background: white;
+
+}
 .partmenu.nav:nth-child(3), .partmenu.news{
 	padding: 20px 0 20px 0;
 }
