@@ -1,0 +1,120 @@
+/* Short normalize */
+
+html {
+	font-family: sans-serif; 
+	-ms-text-size-adjust: 100%; 
+    -webkit-text-size-adjust: 100%; 
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+a {
+	background-color: transparent;
+	text-decoration: none;
+}
+
+img {
+	border: 0;
+}
+
+article,
+aside,
+details,
+div,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+	display: block;
+}
+
+/* My style */
+@font-face{
+	font-family: Pompadur;
+    src: url(../assets/font/DeHangster-Regular.otf);
+}
+
+.main{
+	margin: auto;
+	display: block;
+	width: 500px;
+	position: relative;
+	top:50px;
+
+}
+h1{
+	width: 300px;
+	margin: auto;
+	text-align: center;
+	font-family: Pompadur;
+}
+#container{
+	padding: 15px;
+	font: 14px Pompadur;
+	color: grey;
+	position: relative;
+	top: 10px;
+	margin: auto;
+	width: 100%;
+	height: 300px;
+	background: url(../assets/82a66c6b69a61564494a682e4fb0d704.jpg) 50% no-repeat;
+	border: 2px dotted grey;
+	border-radius: 3px;
+	overflow-y: scroll;
+}
+::-webkit-scrollbar{
+    width:12px;
+}
+::-webkit-scrollbar-thumb{
+    border-width:1px 1px 1px 2px;
+    border-color: #777;
+    background-color: #aaa;
+}
+::-webkit-scrollbar-thumb:hover{
+    border-width: 1px 1px 1px 2px;
+    border-color: #555;
+    background-color: #777;
+}
+::-webkit-scrollbar-track{
+    border-width:0;
+}
+::-webkit-scrollbar-track:hover{
+    border-left: solid 1px #aaa;
+    background-color: #eee;
+}
+.formToDo{
+	display: block;
+	width: 570px;
+	margin: 30px 0 0 0;
+}
+.formToDo__text{
+	width: 350px;
+	box-sizing: border-box;
+	height: 30px;
+	font: 16px Pompadur, Tahoma, Arial, sans-serif;
+	padding-left: 20px;
+	border-radius: 3px;
+	border: 1px solid gray;
+}
+.formToDo__btn{
+	display: inline-block;
+	border-radius: 3px;
+	border: 1px solid gray;
+	background: white;
+	width: 173px;
+	box-sizing: border-box;
+	height: 29px;
+	margin-left: 5px;
+	font: 16px Pompadur, Tahoma, Arial, sans-serif;
+	outline: none;
+}
