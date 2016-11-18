@@ -1,0 +1,83 @@
+
+/* My style */
+@font-face{
+	font-family: Pompadur;
+    src: url(../assets/font/DeHangster-Regular.otf);
+}
+@font-face{
+	font-family: Pompadur1;
+    src: url(../assets/font/Nightamore_Brush_Free_Font.otf);
+}
+@font-face{
+	font-family: Pompadur2;
+    src: url(../assets/font/The_Goldsmith_Vintage.otf);
+}
+
+.main{
+	margin: auto;
+	display: block;
+	max-width: 600px;
+	position: relative;
+	top:50px;
+
+
+}
+h1{
+	width: 300px;
+	margin: auto;
+	text-align: center;
+	font-family: Pompadur;
+}
+#container{
+	padding: 15px;
+	font: 14px Pompadur;
+	color:black;
+	position: relative;
+	top: 10px;
+	height: 300px;
+	margin: auto;
+	font-size: 20px;
+	background: url(../assets/82a66c6b69a61564494a682e4fb0d704.jpg) 50% no-repeat;
+	border: 2px dotted grey;
+	border-radius: 3px;
+	overflow-y: scroll;
+}
+
+::-webkit-scrollbar{
+    width:12px;
+}
+::-webkit-scrollbar-thumb{
+    border-width:1px 1px 1px 2px;
+    border-color: #777;
+    background-color: #aaa;
+}
+::-webkit-scrollbar-thumb:hover{
+    border-width: 1px 1px 1px 2px;
+    border-color: #555;
+    background-color: #777;
+}
+::-webkit-scrollbar-track{
+    border-width:0;
+}
+::-webkit-scrollbar-track:hover{
+    border-left: solid 1px #aaa;
+    background-color: #eee;
+}
+.input-group{
+	margin: 10px auto;
+	background: white;
+	box-sizing: border-box;
+}
+.input-group-addon-text{
+	padding-left: 10px;
+
+}
+.btn-default{
+	font: 16px Pompadur;
+}
+.form-control{
+	font: 16px Pompadur;
+}
+.input-group-addon-text--finished{
+	text-decoration: line-through;
+}

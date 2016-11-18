@@ -43,6 +43,14 @@ summary {
 	font-family: Pompadur;
     src: url(../assets/font/DeHangster-Regular.otf);
 }
+@font-face{
+	font-family: Pompadur1;
+    src: url(../assets/font/Nightamore_Brush_Free_Font.otf);
+}
+@font-face{
+	font-family: Pompadur2;
+    src: url(../assets/font/The_Goldsmith_Vintage.otf);
+}
 
 .main{
 	margin: auto;
@@ -61,12 +69,13 @@ h1{
 #container{
 	padding: 15px;
 	font: 14px Pompadur;
-	color: grey;
+	color:black;
 	position: relative;
 	top: 10px;
 	margin: auto;
 	width: 100%;
 	height: 300px;
+	font-size: 20px;
 	background: url(../assets/82a66c6b69a61564494a682e4fb0d704.jpg) 50% no-repeat;
 	border: 2px dotted grey;
 	border-radius: 3px;
@@ -92,6 +101,15 @@ h1{
     border-left: solid 1px #aaa;
     background-color: #eee;
 }
+.input-group{
+	width: 350px;
+	margin: 15px auto;
+	background: white;
+	box-sizing: border-box;
+	border: 1px solid grey;
+	border-radius: 3px;
+}
+
 .formToDo{
 	display: block;
 	width: 570px;
