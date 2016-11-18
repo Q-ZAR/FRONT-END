@@ -1,8 +1,6 @@
 var BookStorage = (function (BookModel) {
-
     'use strict';
 
-    /*библиотека книг - ее не трогать!*/
     var booksState = [
         new BookModel.Book('assets/book-pics/pic-1.jpg', "Jewels of Nizam", "Geeta Devi", "4", new Date(2015, 10, 12, 13, 20)),
         new BookModel.Book('assets/book-pics/pic-2.jpg', "Cakes &amp; Bakes", "Sanjeev Kapoor", "5", new Date(2016, 10, 12, 13, 20)),

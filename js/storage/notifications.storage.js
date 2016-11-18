@@ -1,5 +1,4 @@
 var NotificationStorage = (function (NotificationModel) {
-
     'use strict';
 
     var news = [

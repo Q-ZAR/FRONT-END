@@ -1,19 +1,15 @@
 var View = (function (BookStorage, Utils, BookModel, NotificationModel, NotificationStorage) {
-
     'use strict';
 
-    //с ней буду работать
     var library = BookStorage.booksState.slice();
 
-    //определение места-вставки
     var $books = document.querySelector("#cnt");
     var $news = document.querySelector("#newsBlock");
 
 
     /* ----------- 
-       ДЛЯ КНИГ
+  function for books
     ----------- */
-    //формируем блок кода
     function showBooks(arr) {
         if (Array.isArray(arr)) {
             Utils.removeChildren($books);
@@ -27,7 +23,6 @@ var View = (function (BookStorage, Utils, BookModel, NotificationModel, Notifica
 
     //showBooks(library);
 
-    //создание первой части кода (без звезд)
     function createBook(book, i) {
         if (book instanceof BookModel.Book) {
             var result = "<div class='book-item' id='part" + i + "'>";
@@ -45,7 +40,6 @@ var View = (function (BookStorage, Utils, BookModel, NotificationModel, Notifica
         }
     }
 
-    //создание второй части кода (звезды)
     function addStar(book, i) {
         var bookNum = i;
         var starNum;
@@ -55,11 +49,9 @@ var View = (function (BookStorage, Utils, BookModel, NotificationModel, Notifica
             starNum = j;
             if (starNumb > 0) {
                 resultStar += "<div class='star star-full' onmouseout='Controller.hovStarsOut(" + bookNum + "," + starNum + ")' onmouseover='Controller.hovStars(" + bookNum + "," + starNum + ")' onclick='Controller.addStars(" + bookNum + "," + starNum + ");'></div>";
-                //resultStar += "<div id='star"+bookNum+starNum+"' class='star star-full'></div>";
                 starNumb--;
             } else {
                 resultStar += "<div class='star ' onmouseout='Controller.hovStarsOut(" + bookNum + "," + starNum + ")' onmouseover='Controller.hovStars(" + bookNum + "," + starNum + ")' onclick='Controller.addStars(" + bookNum + "," + starNum + ");'></div>";
-                //resultStar += "<div id='star"+bookNum+starNum+"' class='star '></div>";
             }
         }
         return resultStar;
@@ -67,9 +59,8 @@ var View = (function (BookStorage, Utils, BookModel, NotificationModel, Notifica
 
 
     /* ----------- 
-     ДЛЯ НОВОСТЕЙ
+function for notifications
     ----------- */
-    //выводит новость в блок на странице
     function showNews(arr) {
         if (Array.isArray(arr)) {
             for (var i = arr.length - 1; i >= 0; i--) {
@@ -82,7 +73,6 @@ var View = (function (BookStorage, Utils, BookModel, NotificationModel, Notifica
 
     //showNews(NotificationStorage.news);
 
-    //делает текст для вставки
     function createNews(arr) {
         if (arr instanceof NotificationModel.News) {
             var currentDate = new Date();
@@ -110,11 +100,11 @@ var View = (function (BookStorage, Utils, BookModel, NotificationModel, Notifica
     }
 
     return {
-        library: library, //массив книг
-        showBooks: showBooks, //показать код блока книги
-        createBook: createBook,// создаю все кроме звезд
-        addStar: addStar, // создаю код звезд
-        showNews: showNews, //показать новости на странице
+        library: library,
+        showBooks: showBooks,
+        createBook: createBook,
+        addStar: addStar,
+        showNews: showNews,
     }
 
 } (BookStorage, Utils, BookModel, NotificationModel, NotificationStorage));

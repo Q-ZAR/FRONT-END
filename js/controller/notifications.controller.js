@@ -1,10 +1,8 @@
 var NotifController = (function (NotificationStorage, View, NotificationModel, Utils) {
-
     'use strict';
 
     var $news = document.querySelector("#newsBlock");
 
-    //добавляет новую новость в массив
     function addNews(formAutor, formTitle) {
         Utils.removeChildren($news);
         var text = "You added <span>" + formTitle.value + "</span> by <span>" + formAutor.value + "</span> to your <span>Must Read Titles</span>";
