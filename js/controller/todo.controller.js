@@ -5,10 +5,12 @@ var Controller = (function () {
 
         this.add = function (arr) {
             var formItem = window.document.querySelector("#newItem");
-            var newItem = new Model(formItem.value, 'active', new Date());
-            arr.unshift(newItem);
-            //вызов
-            View.show(arr);
+            if (confirm("Are you sure you want to add new ToDo item: "+formItem.value+"?")) {
+                var newItem = new Model(formItem.value, 'active', new Date());
+                arr.unshift(newItem);
+                //вызов
+                View.show(arr);
+            }
         }
 
 
@@ -22,7 +24,7 @@ var Controller = (function () {
             View.show(arr);
         }
 
-        this.del = function (arr,i) {
+        this.del = function (arr, i) {
             var elem = event.target.nextElementSibling;
             var a = arr[i];
             arr.splice(i, 1);

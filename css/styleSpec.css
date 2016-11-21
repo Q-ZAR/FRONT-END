@@ -26,11 +26,11 @@ h1{
 	width: 300px;
 	margin: auto;
 	text-align: center;
-	font-family: Pompadur;
+	font-family: sans-serif;
 }
 #container{
 	padding: 15px;
-	font: 14px Pompadur;
+	font: 14px sans-serif;
 	color:black;
 	position: relative;
 	top: 10px;
@@ -73,10 +73,10 @@ h1{
 
 }
 .btn-default{
-	font: 16px Pompadur;
+	font: 16px sans-serif;
 }
 .form-control{
-	font: 16px Pompadur;
+	font: 16px sans-serif;
 }
 .input-group-addon-text--finished{
 	text-decoration: line-through;
