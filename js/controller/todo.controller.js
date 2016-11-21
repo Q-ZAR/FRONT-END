@@ -12,17 +12,22 @@ var Controller = (function () {
         }
 
 
-        this.perform = function (arr,i) {
+        this.perform = function (arr, i) {
             var elem = event.target.nextElementSibling;
             //elem.classList.toggle("input-group-addon-text--finished");
             var a = arr[i];
-            arr.splice(i,1);
-            a.status=false;
+            arr.splice(i, 1);
+            a.status = false;
             arr.push(a);
             View.show(arr);
-            
+        }
+
+        this.del = function (arr,i) {
+            var elem = event.target.nextElementSibling;
+            var a = arr[i];
+            arr.splice(i, 1);
+            View.show(arr);
         }
     }
-    var controller = new Controller();
-    return controller;
+    return new Controller;
 } ());
