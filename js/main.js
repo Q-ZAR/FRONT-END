@@ -1,5 +1,5 @@
- var Main = (function(){
-     'use strict';
+var Main = (function () {
+    'use strict';
 
-      View.show(Storage);
- }())
+    View.show(Storage);
+} ());

@@ -1,9 +1,5 @@
-var Storage = (function (Model) {
+var Storage = (function () {
     'use strict';
-
-    /*function DB(list) {
-        this.toDoList = list || [];
-    }*/
 
     var myStorage = [
         new Model('Item 1', true, new Date(2016, 10, 15, 13, 20)),
@@ -14,4 +10,4 @@ var Storage = (function (Model) {
     ];
 
     return myStorage;
-} (Model));
+} ());
