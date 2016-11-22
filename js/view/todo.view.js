@@ -4,7 +4,7 @@ var View = (function () {
     function View() {
 
         this.$list = document.querySelector("#container");
-        //Event
+        //Event 1
         this.$addBtn = window.document.querySelector('.btn');
 
         this.$addBtn.addEventListener('click', function btn() {
@@ -16,6 +16,16 @@ var View = (function () {
             //reset input field
             formItem.value = '';
         });
+
+        //Event 2
+        this.$search = window.document.querySelector('#searchForm');
+
+        this.$search.addEventListener('input', function search() {
+            var searchWord = searchForm.value;
+            Controller.oninput(searchWord);
+            event.preventDefault();
+        });
+
     }
 
     //show all tasks from database
@@ -37,9 +47,9 @@ var View = (function () {
             var result = "<div class='row'><div class='col-lg-12'><div class='input-group'><span class='input-group-addon'>";
 
             if (arr[i].status) {
-                result += "<input type='checkbox' onchange='Controller.perform(Storage," + i + ");'><span class='input-group-addon-text' onclick='Controller.del(Storage," + i + ");'> " + arr[i].text + "</span></span></div></div></div>"
+                result += "<input type='checkbox' onchange='Controller.perform(" + i + ");'><span class='input-group-addon-text' onclick='Controller.del(" + i + ");'> " + arr[i].text + "</span></span></div></div></div>"
             } else {
-                result += "<input type='checkbox' onchange='Controller.perform(Storage," + i + ");' checked><span class='input-group-addon-text input-group-addon-text--finished' onclick='Controller.del(Storage," + i + ");'>" + arr[i].text + "</span></span></div></div></div>";
+                result += "<input type='checkbox' onchange='Controller.perform(" + i + ");' checked><span class='input-group-addon-text input-group-addon-text--finished' onclick='Controller.del(" + i + ");'>" + arr[i].text + "</span></span></div></div></div>";
             }
 
             return result;
